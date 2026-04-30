@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff200;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5c800;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="96" cy="96" r="96" fill="url(#grad)"/>
+  <!-- Dark background for contrast -->
+  <circle cx="96" cy="96" r="92" fill="#080808"/>
+  <!-- MB initials -->
+  <text x="96" y="115" font-family="'JetBrains Mono', monospace" font-size="72" font-weight="700" text-anchor="middle" fill="#fff200" letter-spacing="-4">MB</text>
+  <!-- Accent dot -->
+  <circle cx="155" cy="50" r="8" fill="#fff200"/>
+</svg>
