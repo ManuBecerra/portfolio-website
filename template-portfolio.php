@@ -26,13 +26,13 @@ $ogCard = $ogCards[array_rand($ogCards)];
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manuel Becerra | Product Manager · Berlin · Enterprise AI</title>
+<title>Manuel Becerra | Product Manager & Product Owner · Berlin · AI Products</title>
 
 <!-- Open Graph Meta Tags -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hi.manubecerra.com">
-<meta property="og:title" content="Manuel Becerra | Product Manager · Berlin · Enterprise AI">
-<meta property="og:description" content="PM and PO with 5+ years building enterprise AI tools. Case studies in AI model customization, MT quality pipelines, and B2B SaaS. Open to PM/PO roles in Berlin.">
+<meta property="og:title" content="Manuel Becerra | Product Manager & Product Owner · Berlin · AI Products">
+<meta property="og:description" content="Product Manager and Product Owner. Five years building AI products in B2B SaaS. Owned Flow at Lengoo, built Signal at Cognigy. Open to PM, PO roles and project work in Berlin.">
 <meta property="og:image" content="<?php echo htmlspecialchars($ogCard['image'], ENT_QUOTES, 'UTF-8'); ?>">
 <meta property="og:image:alt" content="<?php echo htmlspecialchars($ogCard['alt'], ENT_QUOTES, 'UTF-8'); ?>">
 <meta property="og:locale" content="en_US">
@@ -40,12 +40,12 @@ $ogCard = $ogCards[array_rand($ogCards)];
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://hi.manubecerra.com">
-<meta name="twitter:title" content="Manuel Becerra | Product Manager · Berlin · Enterprise AI">
-<meta name="twitter:description" content="PM and PO with 5+ years building enterprise AI tools. Case studies in AI model customization, MT quality pipelines, and B2B SaaS. Open to PM/PO roles in Berlin.">
+<meta name="twitter:title" content="Manuel Becerra | Product Manager & Product Owner · Berlin · AI Products">
+<meta name="twitter:description" content="Product Manager and Product Owner. Five years building AI products in B2B SaaS. Owned Flow at Lengoo, built Signal at Cognigy. Open to PM, PO roles and project work in Berlin.">
 <meta name="twitter:image" content="<?php echo htmlspecialchars($ogCard['image'], ENT_QUOTES, 'UTF-8'); ?>">
 
 <!-- Additional Meta Tags -->
-<meta name="description" content="PM and PO with 5+ years building enterprise AI tools. Case studies in AI model customization, MT quality pipelines, and B2B SaaS. Open to PM/PO roles in Berlin.">
+<meta name="description" content="Product Manager and Product Owner. Five years building AI products in B2B SaaS. Owned Flow at Lengoo, built Signal at Cognigy. Open to PM, PO roles and project work in Berlin.">
 <meta name="author" content="Manuel Becerra">
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="google9e1b1b5f15b5328b.html">
@@ -67,35 +67,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
 
   gtag('config', 'G-PV9ZWBGWW1');
-</script>
-<!-- JSON-LD Schema Markup for SEO -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Manuel Becerra",
-  "url": "https://hi.manubecerra.com",
-  "jobTitle": "Product Manager & PO",
-  "description": "PM and PO with 5+ years building enterprise AI tools. Case studies in AI model customization, MT quality pipelines, and B2B SaaS.",
-  "image": "https://hi.manubecerra.com/wp-content/uploads/2022/11/Manu_Becerra.png",
-  "sameAs": [
-    "https://linkedin.com/in/manubecerra",
-    "https://twitter.com/manubecerra"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Berlin",
-    "addressCountry": "DE"
-  },
-  "knowsAbout": [
-    "Product Management",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "B2B SaaS",
-    "Enterprise Software",
-    "Team Leadership"
-  ]
-}
 </script>
 <style>
   /* ── GLOBAL OVERRIDES (case study hero) ── */
@@ -1157,7 +1128,7 @@ nav.open .nav-toggle span:last-child{transform:translateY(-3px) rotate(-45deg)}
 .abt{display:flex;flex-direction:column;justify-content:center}
 .abt p{font-size:15px;color:var(--muted);line-height:1.88;margin-bottom:14px;font-weight:300}
 .abt p strong{color:var(--ink);font-weight:600}
-.pillars{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:12px;align-self:stretch}
+.pillars{display:grid;grid-template-columns:1fr;grid-auto-rows:auto;gap:12px;align-self:stretch}
 .pil{background:var(--card);border:1px solid var(--bdr);padding:28px 24px;position:relative;overflow:hidden;transition:border-color .25s,background .4s;cursor:default;display:flex;flex-direction:column;justify-content:flex-start}
 .pil::after{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--al);transform:scaleY(0);transform-origin:bottom;transition:transform .3s}
 .pil:hover{border-color:var(--abdr)} .pil:hover::after{transform:scaleY(1)}
@@ -1676,6 +1647,92 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted
   .case-nav{flex-direction:column;gap:18px}
 }
 
+/* ─── NEW HOME SECTIONS ─── */
+
+/* Ways we can work together */
+.ways-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:3px; margin-top:36px; }
+.way-col {
+  background:var(--card); border:1px solid var(--bdr); padding:32px 28px;
+  position:relative; transition:border-color .25s, background .25s;
+  display:flex; flex-direction:column;
+}
+.way-col:hover { border-color:var(--abdr); background:rgba(255,242,0,.02); }
+.way-num {
+  font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em;
+  color:var(--al); margin-bottom:24px; font-weight:600;
+}
+.way-title {
+  font-size:18px; font-weight:700; color:var(--ink);
+  letter-spacing:-.4px; margin-bottom:12px;
+}
+.way-desc {
+  font-size:13px; color:var(--muted); line-height:1.78;
+  font-weight:300; flex:1; margin:0;
+}
+.way-cta {
+  display:inline-flex; align-items:center; gap:6px; margin-top:18px;
+  font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700;
+  letter-spacing:.06em; color:var(--al); transition:opacity .2s;
+}
+.way-cta:hover { opacity:.75; }
+
+/* Where I've worked — trust strip */
+.trust-strip {
+  display:flex; flex-wrap:wrap; align-items:center; gap:16px 18px;
+  padding:20px 0; margin-top:6px;
+}
+.trust-name {
+  font-size:clamp(16px,2vw,22px); font-weight:700;
+  letter-spacing:-.5px; color:var(--muted);
+  transition:color .25s; cursor:default;
+}
+.trust-name:hover { color:var(--ink); }
+.trust-primary { color:var(--ink); }
+.trust-primary:hover { color:var(--al); }
+.trust-sep { color:var(--subtle); font-size:18px; font-weight:300; }
+
+/* Currently building */
+.now-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:3px;
+  margin-top:36px;
+}
+.now-col {
+  background:var(--card); border:1px solid var(--bdr); padding:28px 26px;
+  display:flex; flex-direction:column; position:relative;
+  transition:border-color .25s;
+}
+.now-col:hover { border-color:var(--abdr); }
+.now-col::before {
+  content:''; position:absolute; top:0; left:0; width:3px; height:0;
+  background:var(--al); transition:height .3s cubic-bezier(.22,1,.36,1);
+}
+.now-col:hover::before { height:100%; }
+.now-status {
+  display:inline-block; align-self:flex-start; font-family:'JetBrains Mono',monospace;
+  font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--al); border:1px solid var(--abdr); background:var(--adim);
+  padding:4px 9px; border-radius:3px; margin-bottom:18px;
+}
+.now-title {
+  font-size:17px; font-weight:700; color:var(--ink);
+  letter-spacing:-.4px; margin-bottom:12px; line-height:1.2;
+}
+.now-desc {
+  font-size:13px; color:var(--muted); line-height:1.76;
+  font-weight:300; margin:0 0 14px; flex:1;
+}
+.now-cta {
+  font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--al);
+  transition:opacity .2s;
+}
+.now-cta:hover { opacity:.75; }
+
+@media (max-width:860px) {
+  .ways-grid, .now-grid { grid-template-columns:1fr; }
+  .trust-strip { gap:10px 12px; }
+}
+
 /* ─── SIGNAL STYLES ─── */
 .sig-glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:3px;margin:20px 0 8px}
 .sig-mini{background:var(--card);border:1px solid var(--bdr);padding:20px 22px;display:flex;flex-direction:column;gap:6px;transition:border-color .25s,background .3s;position:relative;overflow:hidden}
@@ -1799,25 +1856,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-grid"></div>
 
     <div class="hero-left">
-      <div class="tag"><span class="blink"></span>Open to PM / PO Roles · Berlin</div>
+      <div class="tag"><span class="blink"></span>Product Manager &middot; Product Owner &middot; Berlin</div>
       <div class="h1">
-        <span>Making </span><span class="g">complex AI</span><br>
-        <span class="ghost">feel</span><br>
-        <span>simple to use</span>
+        <span>I build </span><span class="g">AI products</span><br>
+        where the <span class="ghost">chaos</span> is real.
       </div>
       <p class="hero-sub">
-        <strong>Product Manager and Product Owner</strong> with 5+ years building enterprise AI tools. My background is in UX, which means I think about how systems feel to use, not just how they work. I turn powerful platforms into products people actually adopt.
+        Five years building AI products in B2B SaaS as <strong>PM and PO</strong>. I owned <strong>Flow at Lengoo</strong> and built <strong>Signal at Cognigy</strong>. UX background, eval-focused, PSPO I. Currently completing the IU Akademie PM program.
       </p>
       <div class="btns">
         <a href="#" class="btn-p" onclick="jmp('work');return false">View case studies</a>
-        <a href="http://hi.manubecerra.com/wp-content/uploads/2026/04/CV-Manuel-Becerra-Perez-2.pdf" target="_blank" rel="noopener noreferrer" class="btn-s">Download CV</a>
+        <a href="https://cal.com/manu-becerra-7acsmw/15min" target="_blank" rel="noopener noreferrer" class="btn-s" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'hero_book_call',cta_label:'Book a 15-min call',cta_destination:'cal.com'});">Book a 15-min call</a>
       </div>
       <div class="hero-social">
         <a href="https://www.linkedin.com/in/manubecerra" target="_blank" rel="noopener noreferrer" class="hs-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        
+        <a href="http://hi.manubecerra.com/wp-content/uploads/2026/04/CV-Manuel-Becerra-Perez-2.pdf" target="_blank" rel="noopener noreferrer" class="hs-link" onclick="if(typeof gtag==='function')gtag('event','cv_download',{location:'hero'});">&darr; CV</a>
+      </div>
+      <div class="hero-trust" style="margin-top:28px;padding-top:18px;border-top:1px solid var(--bdr);display:flex;gap:24px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--muted)">
+        <span><span style="color:var(--al)">Currently &rarr;</span> Cognigy</span>
+        <span><span style="color:var(--muted)">Previously &rarr;</span> Lengoo &middot; Aneekaa Studio</span>
       </div>
     </div>
 
@@ -1826,9 +1886,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pcard-in">
           <img class="pcard-img" src="https://hi.manubecerra.com/wp-content/uploads/2022/11/Manu_Becerra.png" alt="Manuel Becerra">
         </div>
-        <div class="chip c1"><div class="cn">+15%</div><div class="cl">CSAT Lift</div></div>
-        <div class="chip c2"><div class="cn">85%</div><div class="cl">Latency Drop</div></div>
-        <div class="chip c3"><div class="cn">+60%</div><div class="cl">Repeat Business</div></div>
+        <div class="chip c1"><div class="cn">5yr</div><div class="cl">B2B SaaS PM</div></div>
+        <div class="chip c2"><div class="cn">3</div><div class="cl">AI agents live</div></div>
+        <div class="chip c3"><div class="cn">PSPO</div><div class="cl">+ PSM I</div></div>
       </div>
     </div>
   </section>
@@ -1842,32 +1902,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="stats fade">
     <div class="st"><div class="n">5<span class="a">+</span></div><div class="l">Years in product</div></div>
-    <div class="st"><div class="n">2</div><div class="l">Enterprise AI products</div></div>
-    <div class="st"><div class="n">85<span class="a">%</span></div><div class="l">Latency eliminated</div></div>
-    <div class="st"><div class="n">3</div><div class="l">Languages spoken</div></div>
+    <div class="st"><div class="n">2</div><div class="l">AI products owned end-to-end</div></div>
+    <div class="st"><div class="n">3</div><div class="l">Live AI agents in production</div></div>
+    <div class="st"><div class="n">3</div><div class="l">Languages &middot; ES &middot; EN &middot; DE</div></div>
   </div>
 
   <section class="sec fade" id="about">
     <div class="ag">
       <div class="abt">
         <div class="lbl">About</div>
-        <div class="stitle">Berlin-based PM.<br>UX background.</div>
-        <p>I'm Manuel, a <strong>Product Manager and Product Owner</strong> based in Berlin. I started in advertising and photography, moved into UX, and then into product. I enjoy the hard problems: products with real technical depth that still need to feel obvious to the people using them.</p>
-        <p>At <strong>Lengoo</strong>, a Berlin AI startup (USD 34M raised), I owned the product that helped enterprise teams configure, train, and improve custom translation models. When Lengoo closed in 2024, I kept working at Cognigy, the Conversational AI company, turning support and customer insights into clear product priorities.</p>
-        <p>My edge is simple: I understand what AI systems are doing under the hood, and I understand why users stop trusting them. I work in that gap. I am currently <strong>open to PM and PO roles</strong> at product led companies where AI is a real product challenge, not a buzzword.</p>
+        <div class="stitle">From advertising to AI products.<br>Berlin since 2014.</div>
+        <p>I'm Manuel. I work where AI products meet the people who have to use them. Five years in B2B SaaS as <strong>PM and PO</strong>, with a UX background and time spent inside a creative studio I co-founded.</p>
+        <p>At <strong>Lengoo</strong> I owned Flow, a real-time AI translation product, end-to-end. At <strong>Cognigy</strong> I built Signal, a Claude-powered feedback intelligence system. Today I run my own evaluation framework and a stack of production AI agents I designed and host myself.</p>
+        <p>I'm looking for <strong>PM and PO roles</strong> at product-led companies where AI is real product work. Berlin, hybrid, or remote. Open to longer engagements too.</p>
       </div>
       <div class="pillars">
-        <div class="pil"><div class="ico">🤖</div><h4>AI product thinking</h4><p>Four plus years building enterprise AI platforms, from custom model tooling to conversational AI. I know the gap between "technically works" and "actually adopted."</p></div>
-        <div class="pil"><div class="ico">🔍</div><h4>Discovery that drives delivery</h4><p>I start with the problem, not a feature list. I use interviews, ticket patterns, and usage data before anything hits the roadmap.</p></div>
-        <div class="pil"><div class="ico">🎨</div><h4>UX as a product lever</h4><p>Design is how complexity becomes usable. I use UX to make decisions clearer, workflows faster, and products easier to learn.</p></div>
-        <div class="pil"><div class="ico">📐</div><h4>Metrics with a point</h4><p>CSAT, latency, adoption, retention. I define the outcome first, then build what moves it.</p></div>
+        <div class="pil">
+          <h4>I build with AI, not just for it.</h4>
+          <p>Signal at Cognigy: Claude API in production, classification taxonomy, Slack and Jira routing. n8n agent stack I run on my own server. I ship what I design.</p>
+        </div>
+        <div class="pil">
+          <h4>Evals are how AI products earn their place.</h4>
+          <p>I run a working eval framework for K&#x14d;r, a sport-recovery product concept: 5 scenarios, 3 models, automated scoring, human-in-loop threshold. The work Lenny's network calls the defining PM skill for 2026.</p>
+        </div>
+        <div class="pil">
+          <h4>UX is how AI earns trust.</h4>
+          <p>Nine years in design before product. When users stop trusting an AI system I know where to look first: workflow, feedback, transparency, recovery from error.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="sec fade" id="work">
     <div class="lbl">Selected Work</div>
-    <div class="stitle">Case studies.</div>
+    <div class="stitle">Four projects. One pattern:<br>see a broken workflow, build the system that fixes it.</div>
     <div class="pg">
 
       <!-- HALOS unified card -->
@@ -2063,68 +2131,78 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <section class="sec fade" id="stack">
-    <div class="lbl">Process</div>
-    <div class="stitle">How I work.</div>
-    <div class="how-grid">
-      <div class="how-col">
-        <div class="how-label">01 Discovery</div>
-        <ul class="how-list">
-          <li>User Research</li>
-          <li>Customer Insights</li>
-          <li>Problem Framing</li>
-          <li>Stakeholder Alignment</li>
-        </ul>
+  <!-- WAYS WE CAN WORK TOGETHER -->
+  <section class="sec fade" id="ways">
+    <div class="lbl">Ways we can work together</div>
+    <div class="stitle">Three ways in.</div>
+    <div class="ways-grid">
+      <div class="way-col">
+        <div class="way-num">01</div>
+        <div class="way-title">PM or PO role</div>
+        <p class="way-desc">A permanent product role at a product-led company. AI, B2B SaaS, or technical platforms. Berlin, hybrid, or remote. Own a product area end to end.</p>
       </div>
-      <div class="how-col">
-        <div class="how-label">02 Delivery</div>
-        <ul class="how-list">
-          <li>Backlog Prioritization</li>
-          <li>Roadmap Planning</li>
-          <li>Sprint Execution</li>
-          <li>Cross-functional Collaboration</li>
-        </ul>
+      <div class="way-col">
+        <div class="way-num">02</div>
+        <div class="way-title">Project-based work</div>
+        <p class="way-desc">Fixed-scope engagements where AI fluency matters. Discovery sprints, MVP scoping, AI tooling, eval frameworks. Two-week minimum.</p>
       </div>
-      <div class="how-col">
-        <div class="how-label">03 Optimization</div>
-        <ul class="how-list">
-          <li>Product Analytics</li>
-          <li>A/B Testing</li>
-          <li>Customer Feedback Loops</li>
-          <li>Continuous Improvement</li>
-        </ul>
-      </div>
-      <div class="how-col">
-        <div class="how-label">04 Tools</div>
-        <ul class="how-list">
-          <li>Jira · Confluence</li>
-          <li>Figma · Miro</li>
-          <li>Kibana · Grafana</li>
-          <li>Postman · GitLab</li>
-        </ul>
+      <div class="way-col">
+        <div class="way-num">03</div>
+        <div class="way-title">15-min intro call</div>
+        <p class="way-desc">Not sure which mode fits? Start here. Quick conversation, no commitment.</p>
+        <a href="https://cal.com/manu-becerra-7acsmw/15min" target="_blank" rel="noopener noreferrer" class="way-cta" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'ways_book_call',cta_label:'Book a slot',cta_destination:'cal.com'});">Book a slot &rarr;</a>
       </div>
     </div>
   </section>
 
+  <!-- WHERE I'VE WORKED -->
+  <section class="sec fade" id="where" style="padding-top:42px;padding-bottom:42px">
+    <div class="lbl">Where I've worked</div>
+    <div class="trust-strip">
+      <span class="trust-name trust-primary">Cognigy</span>
+      <span class="trust-sep">&middot;</span>
+      <span class="trust-name trust-primary">Lengoo</span>
+      <span class="trust-sep">&middot;</span>
+      <span class="trust-name trust-primary">Aneekaa Studio</span>
+      <span class="trust-sep">&middot;</span>
+      <span class="trust-name">Adidas</span>
+      <span class="trust-sep">&middot;</span>
+      <span class="trust-name">Zalando</span>
+      <span class="trust-sep">&middot;</span>
+      <span class="trust-name">Blinkist</span>
+      <span class="trust-sep">&middot;</span>
+      <span class="trust-name">Fotografiska</span>
+    </div>
+  </section>
 
-  
-  
+  <!-- CREDENTIALS -->
+  <section class="sec fade" id="credentials">
+    <div class="lbl">Credentials</div>
+    <p style="font-size:15px;color:var(--muted);line-height:1.82;max-width:760px;font-weight:300;margin-top:10px">
+      Currently completing the <strong>Product Manager &mdash; AI Program at IU Akademie Berlin</strong> (Mar to Jul 2026). <strong>PSPO I</strong> and <strong>PSM I</strong> from Scrum.org. <strong>Spezialist:in f&uuml;r agiles Projekt- und Prozessmanagement</strong> from IFM. <strong>MA in Photography</strong>, Espai d'art Fotogr&agrave;fic de Val&egrave;ncia (2008&ndash;2010). <strong>BA in Advertising</strong>, Universidad Jorge Tadeo Lozano (2003&ndash;2006).
+    </p>
+  </section>
 
-  <section class="sec fade">
-    <div class="lbl">Background</div>
-    <div class="stitle">Credentials.</div>
-    <div class="cg">
-      <div class="cb">
-        <h3>// Education</h3>
-        <div class="ci"><div class="ct">MA, Photography</div><div class="cs">Espai d'art Fotografic de Valencia</div><div class="cy">2008 to 2010</div></div>
-        <div class="ci"><div class="ct">B.A., Advertising</div><div class="cs">Universidad Jorge Tadeo Lozano</div><div class="cy">2003 to 2006</div></div>
+  <!-- CURRENTLY BUILDING -->
+  <section class="sec fade" id="currently">
+    <div class="lbl">Currently building</div>
+    <div class="stitle">What I'm shipping right now.</div>
+    <div class="now-grid">
+      <div class="now-col">
+        <div class="now-status">Build in progress</div>
+        <div class="now-title">K&#x14d;r &mdash; AI eval framework</div>
+        <p class="now-desc">A sport-recovery product concept. I built a working eval framework: 5 scenarios, 3 models, automated Claude-as-judge scoring, human-in-loop trigger at 22/30. Tiered model routing based on results. Live eval runner on n8n.</p>
       </div>
-      <div class="cb">
-        <h3>// Certifications</h3>
-        <div class="ci"><div class="ct">Agile Project & Process Management</div><div class="cs">Spezialist:in für agiles Projekt- und Prozessmanagement (IFM)</div></div>
-        <div class="ci"><div class="ct">PSPO I - Professional Scrum Product Owner</div><div class="cs">Scrum.org</div></div>
-        <div class="ci"><div class="ct">PSM I - Professional Scrum Master</div><div class="cs">Scrum.org</div></div>
-        <div class="ci"><div class="ct">Product Manager - AI Program</div><div class="cs">IU Akademie · Berlin</div><div class="cy">Mar 2026 to Jul 2026 (in progress)</div></div>
+      <div class="now-col">
+        <div class="now-status">Running since Oct 2025</div>
+        <div class="now-title">Agent orchestration &mdash; n8n stack</div>
+        <p class="now-desc">Self-hosted n8n with three live workflows: daily job discovery agent, cover letter generator, and the K&#x14d;r eval runner. All calling Claude or OpenAI APIs in production.</p>
+      </div>
+      <div class="now-col">
+        <div class="now-status">In production at Cognigy</div>
+        <div class="now-title">Signal &mdash; feedback intelligence</div>
+        <p class="now-desc">The system I built at Cognigy that cut misrouted feedback by 70% in two sprints. Claude API classifier, taxonomy of 4 categories and 3 severities, Slack and Jira routing with confidence scores.</p>
+        <a href="#" class="now-cta" onclick="show('signal');return false">Read the case study &rarr;</a>
       </div>
     </div>
   </section>
@@ -2133,20 +2211,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="cog">
       <div class="col">
         <div class="lbl">Contact</div>
-        <div class="stitle">Let's talk.</div>
-        <p>I am open to PM and PO roles at <strong>product led companies in Berlin and remotely</strong>, especially in AI, B2B SaaS, or complex technical tooling. If you need someone who can own a problem end to end, I would love to talk.</p>
+        <div class="stitle">Open to roles, projects,<br>and short conversations.</div>
+        <p>Permanent PM and PO roles, project work, or a 15-minute intro to see if there is a fit. <strong>B2B SaaS, AI, technical platforms.</strong> Berlin, hybrid, or remote. I reply the same day.</p>
         <a href="mailto:contact@manubecerra.com" class="eml">contact@manubecerra.com</a>
         <div class="socs">
-          <a href="https://www.linkedin.com/in/manubecerra" class="soc" target="_blank" rel="noopener noreferrer">↗ LinkedIn</a>
-          
-          <a href="http://hi.manubecerra.com/wp-content/uploads/2026/04/CV-Manuel-Becerra-Perez-2.pdf" class="soc" target="_blank" rel="noopener noreferrer">Download CV</a>
+          <a href="https://cal.com/manu-becerra-7acsmw/15min" class="soc" target="_blank" rel="noopener noreferrer" onclick="if(typeof gtag==='function')gtag('event','cta_click',{cta_id:'contact_book_call',cta_label:'Book a 15-min call',cta_destination:'cal.com'});">Book a 15-min call</a>
+          <a href="https://www.linkedin.com/in/manubecerra" class="soc" target="_blank" rel="noopener noreferrer">&uarr; LinkedIn</a>
+          <a href="http://hi.manubecerra.com/wp-content/uploads/2026/04/CV-Manuel-Becerra-Perez-2.pdf" class="soc" target="_blank" rel="noopener noreferrer" onclick="if(typeof gtag==='function')gtag('event','cv_download',{location:'contact'});">Download CV</a>
         </div>
       </div>
       <form class="form" onsubmit="return false">
         <div class="fr"><label>Email</label><input type="email" placeholder="you@company.com"></div>
-        <div class="fr"><label>Subject</label><input type="text" placeholder="PM role at your startup"></div>
+        <div class="fr"><label>Subject</label><input type="text" placeholder="Project, role, or intro call"></div>
         <div class="fr"><label>Message</label><textarea placeholder="Tell me about the opportunity..."></textarea></div>
-        <button class="btn-send">Send Message →</button>
+        <button class="btn-send">Send Message &rarr;</button>
       </form>
     </div>
   </section>
@@ -3569,7 +3647,7 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
 
 /* router */
 const caseStudyPages=new Set(['halos','echo','aneekaa','signal','brand']);
-const sectionTrackIds=new Set(['about','work','contact']);
+const sectionTrackIds=new Set(['about','work','ways','where','credentials','currently','contact']);
 const routeLabels={
   home:'Home',
   halos:'HALOS: AI Model Customization',
@@ -3579,6 +3657,10 @@ const routeLabels={
   brand:'HALOS Console: Brand and Design',
   about:'About',
   work:'Work',
+  ways:'Ways to Work Together',
+  where:'Where I have Worked',
+  credentials:'Credentials',
+  currently:'Currently Building',
   contact:'Contact'
 };
 

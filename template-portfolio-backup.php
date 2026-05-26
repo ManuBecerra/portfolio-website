@@ -2,8 +2,20 @@
 <?php
 $ogCards = [
   [
-    'image' => 'https://aneekaa.com/wp-content/uploads/cropped-logoweb@100x.png',
-    'alt' => 'Aneekaa Studio logo',
+    'image' => 'https://hi.manubecerra.com/wp-content/uploads/2025/10/HALOS-Console-manuweb1-1.png',
+    'alt' => 'HALOS Console case study card',
+  ],
+  [
+    'image' => 'https://hi.manubecerra.com/wp-content/uploads/2025/10/Echo-project.png',
+    'alt' => 'Project Echo case study card',
+  ],
+  [
+    'image' => 'https://hi.manubecerra.com/wp-content/uploads/2025/10/Aneekaa-manuweb.png',
+    'alt' => 'Aneekaa Studio case study card',
+  ],
+  [
+    'image' => 'https://hi.manubecerra.com/wp-content/uploads/2026/04/Card_Home-scaled.png',
+    'alt' => 'HALOS Console brand case study card',
   ],
 ];
 $ogCard = $ogCards[array_rand($ogCards)];
@@ -14,12 +26,12 @@ $ogCard = $ogCards[array_rand($ogCards)];
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manuel Becerra | Product Manager · Berlin · Enterprise AI</title>
+<title>Manuel Becerra | Product Manager &amp; Product Owner · Berlin · AI Products</title>
 
 <!-- Open Graph Meta Tags -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hi.manubecerra.com">
-<meta property="og:title" content="Manuel Becerra | Product Manager · Berlin · Enterprise AI">
+<meta property="og:title" content="Manuel Becerra | Product Manager & Product Owner · Berlin · AI Products">
 <meta property="og:description" content="PM and PO with 5+ years building enterprise AI tools. Case studies in AI model customization, MT quality pipelines, and B2B SaaS. Open to PM/PO roles in Berlin.">
 <meta property="og:image" content="<?php echo htmlspecialchars($ogCard['image'], ENT_QUOTES, 'UTF-8'); ?>">
 <meta property="og:image:alt" content="<?php echo htmlspecialchars($ogCard['alt'], ENT_QUOTES, 'UTF-8'); ?>">
@@ -28,7 +40,7 @@ $ogCard = $ogCards[array_rand($ogCards)];
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://hi.manubecerra.com">
-<meta name="twitter:title" content="Manuel Becerra | Product Manager · Berlin · Enterprise AI">
+<meta name="twitter:title" content="Manuel Becerra | Product Manager & Product Owner · Berlin · AI Products">
 <meta name="twitter:description" content="PM and PO with 5+ years building enterprise AI tools. Case studies in AI model customization, MT quality pipelines, and B2B SaaS. Open to PM/PO roles in Berlin.">
 <meta name="twitter:image" content="<?php echo htmlspecialchars($ogCard['image'], ENT_QUOTES, 'UTF-8'); ?>">
 
@@ -39,6 +51,7 @@ $ogCard = $ogCards[array_rand($ogCards)];
 <meta name="google-site-verification" content="google9e1b1b5f15b5328b.html">
 <link rel="canonical" href="https://hi.manubecerra.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./favicon.png">
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -56,6 +69,862 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('config', 'G-PV9ZWBGWW1');
 </script>
 <style>
+  /* ── GLOBAL OVERRIDES (case study hero) ── */
+  .ph-cover {
+    display: none !important;
+  }
+  /* Case Study Hero Alignment and Spacing */
+  .hero-case-study {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 140px;
+    padding-bottom: 120px;
+  }
+  .metrics {
+    margin-top: auto;
+  }
+  /* (your existing big CSS continues here) */
+  /* ─────────────────────────────────────
+     DESIGN SYSTEM
+  ───────────────────────────────────── */
+  :root {
+    /* HOME / HALOS = electric yellow */
+    --a:#fff200; --al:#fff200; --adim:rgba(255,242,0,.07); --abdr:rgba(255,242,0,.28); --aglow:rgba(255,242,0,.18);
+    /* ECHO = cyan */
+    --ea:#0891b2; --eal:#22d3ee; --edim:rgba(34,211,238,.08); --ebdr:rgba(34,211,238,.2);
+    /* ANEEKAA = brand yellow (matches aneekaa.com) */
+    --na:#c9a800; --nal:#f5c800; --ndim:rgba(245,200,0,.08); --nbdr:rgba(245,200,0,.35);
+    /* BRAND = violet/purple */
+    --ba:#7c3aed; --bal:#a78bfa; --bdim:rgba(167,139,250,.08); --bbdr:rgba(167,139,250,.25); --bglow:rgba(167,139,250,.2);
+    /* SIGNAL = electric blue */
+    --sa:#00b4d8; --sal:#6ee7ff; --sdim:rgba(0,180,216,.10); --sbdr:rgba(0,180,216,.32); --sglow:rgba(0,180,216,.22);
+  }
+  [data-theme="dark"] {
+    --bg:#080808; --bg2:#0f0f0f; --bg3:#161616;
+    --card:#111111; --bdr:#222222; --subtle:#333;
+    --ink:#f0f0f0; --muted:#666;
+    --nav-bg:rgba(8,8,8,.9); --sh:rgba(0,0,0,.6);
+  }
+  [data-theme="light"] {
+    --bg:#fafafa; --bg2:#f2f2f2; --bg3:#e8e8e8;
+    --card:#fff; --bdr:#e0e0e0; --subtle:#ccc;
+    --ink:#0a0a0a; --muted:#888;
+    --nav-bg:rgba(250,250,250,.92); --sh:rgba(0,0,0,.08);
+  }
+
+  /* ── BASE ── */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+  /* Hero section spacing and clean visuals override */
+  .hero { gap: 80px !important; }
+  .hero .tag {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 48px !important;
+  }
+  .hero .h1 {
+    margin-bottom: 48px !important;
+  }
+  .hero .hero-sub {
+    margin-bottom: 64px !important;
+  }
+  .stats {
+    padding-top: 64px !important;
+  }
+  .hero-glow {
+    display: none !important;
+  }
+  .pcard-in::before {
+    content: none !important;
+  }
+  .chip {
+    box-shadow: none !important;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sora',sans-serif;
+    overflow-x:hidden;
+    transition:background .4s,color .4s;
+  }
+  a{text-decoration:none;color:inherit}
+
+  /* ── CURSOR ── */
+  #cur{
+    width:8px;
+    height:8px;
+    background:var(--al);
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    z-index:9999;
+    transform:translate(-50%,-50%);
+    transition:width .2s,height .2s;
+  }
+  #cur-r{
+    width:28px;
+    height:28px;
+    border:1px solid var(--abdr);
+    border-radius:50%;
+    position:fixed;
+    pointer-events:none;
+    z-index:9998;
+    transform:translate(-50%,-50%);
+  }
+
+  /* ── NAV ── */
+  nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 52px;
+    background:var(--nav-bg);
+    backdrop-filter:blur(24px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s,background .4s;
+  }
+  nav.scrolled{
+    border-color:var(--bdr);
+  }
+  .logo{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:13px;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+  }
+  .logo .dot{
+    color:var(--al);
+  }
+  .nav-r{
+    display:flex;
+    align-items:center;
+    gap:30px;
+  }
+  .nav-links{
+    display:flex;
+    gap:26px;
+    list-style:none;
+  }
+  .nav-links a{
+    font-size:13px;
+    font-weight:500;
+    color:var(--muted);
+    letter-spacing:.02em;
+    transition:color .2s;
+  }
+  .nav-links a:hover{
+    color:var(--ink);
+  }
+  .nav-cta{
+    background:var(--a);
+    color:#000;
+    padding:8px 20px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:600;
+    transition:opacity .2s,transform .2s;
+  }
+  .nav-cta:hover{
+    opacity:.85;
+    transform:translateY(-1px);
+  }
+  .nav-cv{
+    border:1px solid var(--bdr);
+    padding:7px 16px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.05em;
+    color:var(--muted);
+    transition:border-color .2s,color .2s;
+  }
+  .nav-cv:hover{
+    border-color:var(--a);
+    color:var(--a);
+  }
+  .nav-toggle{
+    display:none;
+    width:32px;
+    height:32px;
+    border-radius:999px;
+    border:1px solid var(--bdr);
+    background:var(--card);
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    margin:0;
+    cursor:pointer;
+  }
+  .nav-toggle span{
+    display:block;
+    width:14px;
+    height:2px;
+    background:var(--muted);
+    border-radius:999px;
+    position:relative;
+  }
+  .nav-toggle span+span{
+    margin-top:4px;
+  }
+  nav.open .nav-toggle span:first-child{
+    transform:translateY(3px) rotate(45deg);
+  }
+  nav.open .nav-toggle span:last-child{
+    transform:translateY(-3px) rotate(-45deg);
+  }
+  .th-btn{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:var(--card);
+    border:1px solid var(--bdr);
+    border-radius:20px;
+    padding:5px 12px;
+    cursor:pointer;
+    outline:none;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.06em;
+    color:var(--muted);
+    transition:border-color .2s,color .2s,background .3s;
+  }
+  .th-btn:hover{
+    border-color:var(--al);
+    color:var(--ink);
+  }
+  .th-btn .th-icon{
+    font-size:14px;
+    line-height:1;
+  }
+  .th-btn .th-lbl{
+    font-size:10px;
+  }
+  /* PAGES AND SECTIONS LAYOUT */
+  .page {
+    display:none;
+    min-height:100vh;
+  }
+  .page.active {
+    display:block;
+  }
+  /* HOME PAGE TYPOGRAPHY AND HERO LAYOUT */
+  .hero {
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    padding:120px 52px 80px;
+    gap:64px;
+    position:relative;
+    overflow:hidden;
+    max-width:1280px;
+    margin:0 auto;
+  }
+  /* Glow animation for hero page */
+  .hero-glow {
+    position:absolute;
+    width:700px;
+    height:700px;
+    top:-120px;
+    right:-100px;
+    background:radial-gradient(circle,var(--aglow) 0%,transparent 65%);
+    pointer-events:none;
+    animation:pulse 8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: .35; transform: scale(1); }
+    50% { opacity: .6; transform: scale(1.07); }
+  }
+  .hero-grid {
+    position:absolute;
+    inset:0;
+    background-image: linear-gradient(var(--bdr) 1px, transparent 1px), linear-gradient(90deg, var(--bdr) 1px, transparent 1px);
+    background-size: 52px 52px;
+    opacity: .25;
+    pointer-events:none;
+    mask-image: radial-gradient(ellipse 70% 70% at 70% 40%, black 20%, transparent 80%);
+  }
+
+  /* ── HERO ANIMATIONS ── */
+  .hero-left {
+    position: relative;
+    z-index:1;
+    animation:heroIn .75s cubic-bezier(.22,1,.36,1) forwards;
+  }
+  .hero-left .tag { animation-delay:.05s }
+  .hero-left .h1 { animation-delay:.15s }
+  .hero-left .hero-sub { animation-delay:.28s }
+  .hero-left .btns { animation-delay:.40s }
+  .hero-left .hero-social { animation-delay:.50s }
+  @keyframes heroIn { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+
+  .hero-right .pcard {
+    opacity:0;
+    transform:translateY(32px) scale(.96);
+    animation:cardIn .85s cubic-bezier(.22,1,.36,1) .3s forwards;
+  }
+  @keyframes cardIn { to{opacity:1;transform:none} }
+
+  .chip.c1 { opacity:0; animation:chipIn .5s cubic-bezier(.22,1,.36,1) .52s forwards }
+  .chip.c2 { opacity:0; animation:chipIn .5s cubic-bezier(.22,1,.36,1) .66s forwards }
+  .chip.c3 { opacity:0; animation:chipIn .5s cubic-bezier(.22,1,.36,1) .80s forwards }
+  @keyframes chipIn { from{opacity:0;transform:translateY(12px) scale(.88)} to{opacity:1;transform:none} }
+
+  .h1-line { display:block; overflow:hidden }
+  .h1-line-inner { display:inline-block;transform:translateY(108%);opacity:0;animation:lineReveal .8s cubic-bezier(.22,1,.36,1) forwards }
+  .h1-line:nth-child(1) .h1-line-inner { animation-delay:.18s }
+  .h1-line:nth-child(2) .h1-line-inner { animation-delay:.30s }
+  .h1-line:nth-child(3) .h1-line-inner { animation-delay:.42s }
+  @keyframes lineReveal { to{transform:translateY(0);opacity:1} }
+
+  /* ── STAGGERED FADE GROUP ── */
+  .fade-group > * {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity .55s ease, transform .55s ease;
+  }
+  .fade-group.in > *:nth-child(1) { opacity:1; transform:none; transition-delay:.00s }
+  .fade-group.in > *:nth-child(2) { opacity:1; transform:none; transition-delay:.09s }
+  .fade-group.in > *:nth-child(3) { opacity:1; transform:none; transition-delay:.18s }
+  .fade-group.in > *:nth-child(4) { opacity:1; transform:none; transition-delay:.27s }
+  .fade-group.in > *:nth-child(5) { opacity:1; transform:none; transition-delay:.36s }
+  .fade-group.in > *:nth-child(6) { opacity:1; transform:none; transition-delay:.45s }
+
+  /* ── SECTION LABEL SLIDE ── */
+  .lbl { overflow:hidden; }
+  .lbl-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform .55s cubic-bezier(.22,1,.36,1), opacity .45s ease;
+  }
+  .fade.in .lbl-inner,
+  .fade-group.in .lbl-inner { transform:none; opacity:1; }
+
+  /* ── STITLE SCROLL REVEAL ── */
+  .stitle {
+    overflow: hidden;
+  }
+  .stitle-inner {
+    display: block;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform .7s cubic-bezier(.22,1,.36,1) .08s, opacity .5s ease .08s;
+  }
+  .fade.in .stitle-inner,
+  .fade-group.in .stitle-inner { transform:none; opacity:1; }
+
+  .tag {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--abdr);
+    background: var(--adim);
+    border-radius:4px;
+    padding:6px 12px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    font-weight:500;
+    letter-spacing:.12em;
+    text-transform: uppercase;
+    color: var(--al);
+    margin-bottom:28px;
+  }
+  .blink {
+    width:6px;
+    height:6px;
+    background: var(--al);
+    border-radius:50%;
+    animation: bl 2s infinite;
+    flex-shrink:0;
+  }
+  .pcard {
+    width: 300px;
+    height: 400px;
+    position: relative;
+  }
+  .pcard-in {
+    width: 100%;
+    height: 100%;
+    background: var(--card);
+    border: 1px solid var(--bdr);
+    border-radius:16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+    transition: background .4s, border-color .4s;
+    position: relative;
+  }
+  .pcard-in::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(140deg, var(--adim) 0%, transparent 55%);
+  }
+  .pcard-init {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 62px;
+    font-weight: 700;
+    color: var(--subtle);
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+  .pcard-hint {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    position: relative;
+    z-index: 1;
+  }
+  .pcard-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .pc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease, opacity .3s;
+  }
+  .pc:hover .pc-img {
+    transform: scale(1.04);
+    opacity: .9;
+  }
+  .chip {
+    position: absolute;
+    background: var(--card);
+    border: 1px solid var(--bdr);
+    border-radius: 8px;
+    padding: 10px 14px;
+    z-index: 2;
+    box-shadow: 0 8px 26px var(--sh);
+    transition: background .4s, border-color .4s;
+  }
+  .chip .cn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--al);
+    line-height: 1;
+  }
+  .chip .cl {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .c1 {
+    top: 24px;
+    left: -50px;
+  }
+  .c2 {
+    bottom: 80px;
+    right: -46px;
+  }
+  .c3 {
+    bottom: -10px;
+    left: 6px;
+  }
+  /* ticker */
+  .ticker {
+    overflow: hidden;
+    border-top: 1px solid var(--bdr);
+    border-bottom: 1px solid var(--bdr);
+    padding: 11px 0;
+  }
+  .tk {
+    display: flex;
+    gap: 44px;
+    animation: roll 30s linear infinite;
+    width: max-content;
+  }
+  @keyframes roll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .tki {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .tki .s {
+    color: var(--al);
+    opacity: .4;
+  }
+  /* stats */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--bdr);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .st {
+    padding: 34px 38px;
+    border-right: 1px solid var(--bdr);
+    text-align: center;
+  }
+  .st:last-child {
+    border-right: none;
+  }
+  .st .n {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .st .n .a {
+    color: var(--al);
+  }
+  .st .l {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  /* sections */
+  .sec {
+    padding: 76px 52px;
+    border-top: 1px solid var(--bdr);
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .lbl {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--al);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .lbl::before {
+    content: '//';
+    color: var(--subtle);
+  }
+  .stitle {
+    font-size: clamp(26px, 3.4vw, 48px);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.04;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  /* about */
+  .ag {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 64px;
+    align-items: stretch;
+  }
+  .abt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .abt p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.88;
+    margin-bottom: 14px;
+    font-weight: 300;
+  }
+  .abt p strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 12px;
+    align-self: stretch;
+  }
+  .pil {
+    background: var(--card);
+    border: 1px solid var(--bdr);
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .25s, background .4s;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .pil::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--al);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform .3s;
+  }
+  .pil:hover {
+    border-color: var(--abdr);
+  }
+  .pil:hover::after {
+    transform: scaleY(1);
+  }
+  .pil .ico {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .pil h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .pil p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+  }
+  /* ═══════════════════════════════════════
+     PROJECT GRID
+  ═══════════════════════════════════════ */
+  .pg {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+    align-items: stretch;
+  }
+  /* Shared case study card */
+  .pc-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--bdr);
+    overflow: hidden;
+  }
+  .pc-card:hover {
+    transform: translateY(-3px);
+  }
+  /* Image / visual area */
+  .pc-media {
+    position: relative;
+    overflow: hidden;
+    height:220px;
+    background: var(--bg2);
+  }
+  .pc-media img, .pc-media svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .pc-media img {
+    transition: transform .7s cubic-bezier(.22,1,.36,1), filter .5s;
+    filter: brightness(.8) saturate(.8);
+  }
+  .pc-card:hover .pc-media img {
+    filter: brightness(.85);
+    transform: scale(1.04);
+  }
+  /* Text / content */
+  .pc-body {
+    flex: 1;
+    padding: 26px 28px 28px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+  .pc-header {
+    margin-bottom: 18px;
+  }
+  .pc-intro {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--al);
+    margin-bottom: 14px;
+  }
+  .pc-p {
+    line-height: 1.5;
+    color: var(--ink);
+    font-size: 12px;
+  }
+  .pc-cta {
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 13px;
+    background: transparent;
+    color: var(--nal);
+    border: none;
+    cursor: pointer;
+  }
+  .pc-cta:hover {
+    background: var(--nal);
+    box-shadow: 0 0 15px var(--nal);
+  }
+  .pc-cta .ico {
+    font-size: 20px;
+  }
+  /* Loading */
+  .loading-text {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    text-align: center;
+    padding: 40px 0;
+  }
+  /* Toggle grid / list */
+  .pc-toggle {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-bottom: 12px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .pc-toggle button {
+    background: var(--card);
+    border: 1px solid var(--nal);
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--nal);
+  }
+  .pc-toggle button:hover {
+    background: var(--nal);
+    box-shadow: 0 0 7px var(--nal);
+  }
+
+  /* Tags */
+  .pc-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+  }
+  .pc-tags span {
+    background: var(--bglow);
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--ba);
+    cursor: default;
+  }
+  /* Grid View */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  /* List View */
+  .list {
+    display: block;
+  }
+  .list .pc-card {
+    display: flex;
+    gap: 24px;
+    min-height: 200px;
+  }
+  .list .pc-card:hover {
+    transform: none;
+  }
+  .list .pc-media {
+    width: 290px;
+    min-width: 290px;
+    height: auto;
+  }
+  .list .pc-body {
+    flex: 1;
+    padding: 22px 12px 24px 12px;
+  }
+  .list .pc-tags {
+    justify-content: flex-start;
+    margin-top: auto;
+  }
+  .list .pc-tags span {
+    font-size: 10px;
+  }
+
+  /* Other small UI tweaks */
+  .pmet {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--nal);
+  }
+  .pcb-split {
+    position: relative;
+  }
+  .pcb-split::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--ndim);
+    bottom: 0;
+    left: 0;
+  }
+  .pmet {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--nal);
+  }
+  .pmet-pill {
+    background: var(--pmet-bg);
+    border-radius: 10px;
+    font-size: 9px;
+    font-weight: 700;
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 7px 10px;
+    color: var(--nal);
+  }
   /* ── GLOBAL OVERRIDES (case study hero) ── */
 .ph-cover {
   display: none !important;
@@ -901,25 +1770,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-grid"></div>
 
     <div class="hero-left">
-      <div class="tag"><span class="blink"></span>Open to PM / PO Roles · Berlin</div>
+      <div class="tag"><span class="blink"></span>Product Manager &middot; Product Owner &middot; Berlin</div>
       <div class="h1">
-        <span>Making </span><span class="g">complex AI</span><br>
-        <span class="ghost">feel</span><br>
-        <span>simple to use</span>
+        <span>I build </span><span class="g">AI products</span><br>
+        where the <span class="ghost">chaos</span> is real.
       </div>
       <p class="hero-sub">
-        <strong>Product Manager and Product Owner</strong> with 5+ years building enterprise AI tools. My background is in UX, which means I think about how systems feel to use, not just how they work. I turn powerful platforms into products people actually adopt.
+        Five years building AI products in B2B SaaS as <strong>PM and PO</strong>. I owned <strong>Flow at Lengoo</strong> and built <strong>Signal at Cognigy</strong>. UX background, eval-focused, PSPO I. Currently completing the IU Akademie PM program.
       </p>
       <div class="btns">
         <a href="#" class="btn-p" onclick="jmp('work');return false">View case studies</a>
-        <a href="http://hi.manubecerra.com/wp-content/uploads/2026/04/CV-Manuel-Becerra-Perez-2.pdf" target="_blank" rel="noopener noreferrer" class="btn-s">Download CV</a>
+        <a href="https://cal.com/manu-becerra-7acsmw/15min" target="_blank" rel="noopener noreferrer" class="btn-s">Book a 15-min call</a>
       </div>
       <div class="hero-social">
         <a href="https://www.linkedin.com/in/manubecerra" target="_blank" rel="noopener noreferrer" class="hs-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn
         </a>
-        
+        <a href="http://hi.manubecerra.com/wp-content/uploads/2026/04/CV-Manuel-Becerra-Perez-2.pdf" target="_blank" rel="noopener noreferrer" class="hs-link">↓ CV</a>
+      </div>
+      <div class="hero-trust" style="margin-top:28px;padding-top:18px;border-top:1px solid var(--bdr);display:flex;gap:24px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--muted)">
+        <span><span style="color:var(--al)">Currently →</span> Cognigy</span>
+        <span><span style="color:var(--muted)">Previously →</span> Lengoo · Aneekaa Studio</span>
       </div>
     </div>
 
@@ -928,9 +1800,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pcard-in">
           <img class="pcard-img" src="https://hi.manubecerra.com/wp-content/uploads/2022/11/Manu_Becerra.png" alt="Manuel Becerra">
         </div>
-        <div class="chip c1"><div class="cn">+15%</div><div class="cl">CSAT Lift</div></div>
-        <div class="chip c2"><div class="cn">85%</div><div class="cl">Latency Drop</div></div>
-        <div class="chip c3"><div class="cn">+60%</div><div class="cl">Repeat Business</div></div>
+        <div class="chip c1"><div class="cn">5yr</div><div class="cl">B2B SaaS PM</div></div>
+        <div class="chip c2"><div class="cn">3</div><div class="cl">AI agents live</div></div>
+        <div class="chip c3"><div class="cn">PSPO</div><div class="cl">+ PSM I</div></div>
       </div>
     </div>
   </section>
@@ -942,11 +1814,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <div class="stats fade">
+  <div class="stats fade fade-group">
     <div class="st"><div class="n">5<span class="a">+</span></div><div class="l">Years in product</div></div>
-    <div class="st"><div class="n">2</div><div class="l">Enterprise AI products</div></div>
-    <div class="st"><div class="n">85<span class="a">%</span></div><div class="l">Latency eliminated</div></div>
-    <div class="st"><div class="n">3</div><div class="l">Languages spoken</div></div>
+    <div class="st"><div class="n">2</div><div class="l">AI products owned end-to-end</div></div>
+    <div class="st"><div class="n">3</div><div class="l">Live AI agents in production</div></div>
+    <div class="st"><div class="n">3</div><div class="l">Languages · ES · EN · DE</div></div>
   </div>
 
   <section class="sec fade" id="about">
@@ -1457,63 +2329,732 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <footer><p>// © 2026 Manuel Becerra · Berlin</p><div class="fl"><a href="https://www.linkedin.com/in/manubecerra" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></footer>
 </div>
 
-<!-- ═════════════ ANEEKAA (amber) ══════ -->
+<!-- ═════════════ ANEEKAA (agency light) ══════ -->
 <div class="page" id="pg-aneekaa">
-  <div class="ph">
-    <div class="ph-body fade">
-      <span class="back" onclick="show('home')">← Back to Work</span>
-      <div class="ph-tags">
-        <span class="ph-tag hi">Co-Founder & Project Manager</span>
-        <span class="ph-tag">Brand & Digital · 9 years</span>
-        <span class="ph-tag">Spain / Germany</span>
+
+<style>
+/* ── ANEEKAA AGENCY PAGE — scoped overrides ── */
+#pg-aneekaa { font-family:'Sora',sans-serif; }
+
+#pg-aneekaa .an-nav {
+  display:none !important;
+}
+#pg-aneekaa .an-logo {
+  font-family:'Sora',sans-serif;font-weight:800;font-size:18px;
+  letter-spacing:-.5px;color:var(--ink);display:flex;align-items:center;gap:10px;
+}
+#pg-aneekaa .an-logo img {
+  height:28px;width:auto;
+}
+#pg-aneekaa .an-back {
+  font-family:'Sora',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;color:#999;
+  cursor:pointer;transition:color .2s;display:flex;align-items:center;gap:6px;
+}
+#pg-aneekaa .an-back:hover { color:var(--ink); }
+
+/* hero */
+#pg-aneekaa .an-hero {
+  padding:100px 52px 80px;
+  border-bottom:3px solid #f5c800;
+  position:relative;overflow:hidden;
+}
+#pg-aneekaa .an-hero-kicker {
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:#f5c800;margin-bottom:24px;
+}
+#pg-aneekaa .an-hero-title {
+  font-size:clamp(52px,8vw,120px);font-weight:800;
+  letter-spacing:-4px;line-height:.95;
+  color:var(--ink);margin-bottom:0;
+}
+#pg-aneekaa .an-hero-title em {
+  font-style:normal;color:#f5c800;
+}
+#pg-aneekaa .an-hero-sub {
+  font-size:16px;color:#666;line-height:1.8;
+  max-width:520px;margin-top:36px;font-weight:300;
+}
+#pg-aneekaa .an-hero-meta {
+  display:flex;gap:48px;margin-top:52px;
+  border-top:1px solid #e8e8e8;padding-top:32px;
+}
+#pg-aneekaa .an-meta-item {}
+#pg-aneekaa .an-meta-label {
+  font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#bbb;margin-bottom:6px;
+}
+#pg-aneekaa .an-meta-value {
+  font-size:13px;font-weight:600;color:var(--ink);
+}
+
+/* stats bar */
+#pg-aneekaa .an-stats {
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-bottom:1px solid #e8e8e8;
+}
+#pg-aneekaa .an-stat {
+  padding:40px 44px;border-right:1px solid #e8e8e8;
+  position:relative;overflow:hidden;
+}
+#pg-aneekaa .an-stat::before {
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:#f5c800;transform:scaleX(0);transform-origin:left;
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
+}
+#pg-aneekaa .an-stat:hover::before { transform:scaleX(1); }
+#pg-aneekaa .an-stat:last-child { border-right:none; }
+#pg-aneekaa .an-stat-n {
+  font-size:52px;font-weight:800;letter-spacing:-3px;
+  color:var(--ink);line-height:1;margin-bottom:8px;
+}
+#pg-aneekaa .an-stat-n span { color:#f5c800; }
+#pg-aneekaa .an-stat-l {
+  font-size:11px;color:#999;letter-spacing:.02em;font-weight:400;
+}
+
+/* cover image full bleed */
+#pg-aneekaa .an-cover {
+  width:100%;height:70vh;overflow:hidden;
+}
+#pg-aneekaa .an-cover img {
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 8s ease;
+}
+#pg-aneekaa .an-cover:hover img { transform:scale(1.03); }
+
+/* intro text */
+#pg-aneekaa .an-intro {
+  display:grid;grid-template-columns:1fr 2fr;gap:80px;
+  padding:80px 52px;border-bottom:1px solid #e8e8e8;
+  align-items:start;
+}
+#pg-aneekaa .an-intro-label {
+  font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#bbb;padding-top:6px;position:sticky;top:80px;
+}
+#pg-aneekaa .an-intro-body p {
+  font-size:22px;font-weight:300;line-height:1.65;color:#333;
+  margin-bottom:24px;max-width:640px;
+}
+#pg-aneekaa .an-intro-body p strong { color:var(--ink);font-weight:700; }
+#pg-aneekaa .an-intro-body blockquote {
+  border-left:3px solid #f5c800;padding:4px 0 4px 24px;
+  margin:36px 0;
+}
+#pg-aneekaa .an-intro-body blockquote p {
+  font-size:20px;font-style:italic;color:var(--ink);
+}
+
+/* services */
+#pg-aneekaa .an-services {
+  padding:80px 52px;border-bottom:1px solid #e8e8e8;
+}
+#pg-aneekaa .an-services-header {
+  display:flex;align-items:baseline;justify-content:space-between;
+  margin-bottom:52px;
+}
+#pg-aneekaa .an-section-title {
+  font-size:clamp(32px,4vw,56px);font-weight:800;letter-spacing:-2px;color:var(--ink);
+}
+#pg-aneekaa .an-section-count {
+  font-family:'JetBrains Mono',monospace;font-size:11px;color:#bbb;
+  letter-spacing:.1em;
+}
+#pg-aneekaa .an-service-grid {
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  border:1px solid #e8e8e8;
+}
+#pg-aneekaa .an-service {
+  padding:36px 28px;border-right:1px solid #e8e8e8;
+  position:relative;cursor:default;transition:background .25s;
+}
+#pg-aneekaa .an-service:last-child { border-right:none; }
+#pg-aneekaa .an-service:hover { background:var(--bg3); }
+#pg-aneekaa .an-service-ico {
+  font-size:28px;margin-bottom:20px;display:block;
+}
+#pg-aneekaa .an-service-name {
+  font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--ink);margin-bottom:14px;
+}
+#pg-aneekaa .an-service-list {
+  list-style:none;padding:0;margin:0;
+}
+#pg-aneekaa .an-service-list li {
+  font-size:13px;color:#888;line-height:1.7;
+  padding:5px 0;border-bottom:1px solid #f0f0f0;
+}
+#pg-aneekaa .an-service-list li:last-child { border-bottom:none; }
+
+/* project section */
+#pg-aneekaa .an-project {
+  border-bottom:1px solid #e8e8e8;
+}
+#pg-aneekaa .an-project-header {
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-bottom:1px solid #e8e8e8;
+}
+#pg-aneekaa .an-project-meta {
+  padding:52px 52px;border-right:1px solid #e8e8e8;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+#pg-aneekaa .an-project-num {
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:#bbb;letter-spacing:.1em;margin-bottom:32px;
+}
+#pg-aneekaa .an-project-name {
+  font-size:clamp(28px,3.5vw,48px);font-weight:800;letter-spacing:-1.5px;
+  color:var(--ink);margin-bottom:12px;line-height:1.05;
+}
+#pg-aneekaa .an-project-type {
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:#f5c800;margin-bottom:20px;
+}
+#pg-aneekaa .an-project-desc {
+  font-size:15px;color:#666;line-height:1.78;font-weight:300;max-width:440px;
+}
+#pg-aneekaa .an-project-desc strong { color:var(--ink);font-weight:600; }
+#pg-aneekaa .an-project-link {
+  display:inline-flex;align-items:center;gap:8px;margin-top:28px;
+  font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);border-bottom:2px solid #f5c800;padding-bottom:2px;
+  transition:color .2s;text-decoration:none;width:fit-content;
+}
+#pg-aneekaa .an-project-link:hover { color:#f5c800; }
+#pg-aneekaa .an-project-result {
+  padding:52px;display:flex;flex-direction:column;justify-content:center;gap:28px;
+}
+#pg-aneekaa .an-result-stat {}
+#pg-aneekaa .an-result-n {
+  font-size:56px;font-weight:800;letter-spacing:-3px;color:#f5c800;line-height:1;
+}
+#pg-aneekaa .an-result-l {
+  font-size:12px;color:#999;margin-top:4px;
+}
+
+/* full bleed image */
+#pg-aneekaa .an-img-full {
+  width:100%;overflow:hidden;cursor:zoom-in;
+}
+#pg-aneekaa .an-img-full img {
+  width:100%;height:auto;display:block;
+  transition:transform .6s ease;
+}
+#pg-aneekaa .an-img-full:hover img { transform:scale(1.02); }
+
+/* image grid */
+#pg-aneekaa .an-img-grid {
+  display:grid;gap:3px;
+}
+#pg-aneekaa .an-img-grid.two { grid-template-columns:1fr 1fr; }
+#pg-aneekaa .an-img-grid.three { grid-template-columns:2fr 1fr 1fr; }
+#pg-aneekaa .an-img-grid img {
+  width:100%;height:100%;object-fit:cover;display:block;
+  cursor:zoom-in;transition:opacity .3s;
+  aspect-ratio:4/3;
+}
+#pg-aneekaa .an-img-grid img:hover { opacity:.88; }
+
+/* how section */
+#pg-aneekaa .an-how {
+  display:grid;grid-template-columns:1fr 2fr;gap:80px;
+  padding:80px 52px;border-bottom:1px solid #e8e8e8;align-items:start;
+}
+#pg-aneekaa .an-how-label {
+  font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:#bbb;position:sticky;top:80px;
+}
+#pg-aneekaa .an-how-list { display:flex;flex-direction:column;gap:0; }
+#pg-aneekaa .an-how-item {
+  display:grid;grid-template-columns:48px 1fr;gap:24px;
+  padding:28px 0;border-bottom:1px solid #e8e8e8;align-items:start;
+}
+#pg-aneekaa .an-how-item:last-child { border-bottom:none; }
+#pg-aneekaa .an-how-n {
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  color:#bbb;padding-top:3px;
+}
+#pg-aneekaa .an-how-title {
+  font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;
+}
+#pg-aneekaa .an-how-desc {
+  font-size:14px;color:#888;line-height:1.72;font-weight:300;
+}
+
+/* clients strip */
+#pg-aneekaa .an-clients {
+  padding:52px;border-bottom:1px solid #e8e8e8;
+}
+#pg-aneekaa .an-clients-label {
+  font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:#bbb;margin-bottom:28px;
+}
+#pg-aneekaa .an-clients-list {
+  display:flex;flex-wrap:wrap;gap:0;
+}
+#pg-aneekaa .an-client {
+  font-size:clamp(18px,2.5vw,28px);font-weight:800;letter-spacing:-1px;
+  color:#ddd;padding:8px 24px 8px 0;
+  transition:color .2s;cursor:default;
+}
+#pg-aneekaa .an-client:hover { color:var(--ink); }
+#pg-aneekaa .an-client::after {
+  content:' ·';color:#f5c800;margin-left:8px;
+}
+#pg-aneekaa .an-client:last-child::after { display:none; }
+
+/* closing quote */
+#pg-aneekaa .an-quote {
+  padding:100px 52px;text-align:center;background:#111;
+}
+#pg-aneekaa .an-quote p {
+  font-size:clamp(22px,3vw,42px);font-weight:300;line-height:1.45;
+  color:#fff;max-width:820px;margin:0 auto 32px;letter-spacing:-.5px;
+}
+#pg-aneekaa .an-quote p strong { font-weight:800;color:#f5c800; }
+#pg-aneekaa .an-quote-attr {
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#666;
+}
+
+/* footer */
+#pg-aneekaa .an-footer {
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid #e8e8e8;
+}
+#pg-aneekaa .an-footer-next {
+  padding:52px;border-right:1px solid #e8e8e8;cursor:pointer;
+  transition:background .25s;
+}
+#pg-aneekaa .an-footer-next:hover { background:var(--bg3); }
+#pg-aneekaa .an-footer-next-label {
+  font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#bbb;margin-bottom:12px;
+}
+#pg-aneekaa .an-footer-next-title {
+  font-size:clamp(22px,3vw,38px);font-weight:800;letter-spacing:-1.5px;color:var(--ink);
+  transition:color .25s;
+}
+#pg-aneekaa .an-footer-next:hover .an-footer-next-title { color:#f5c800; }
+#pg-aneekaa .an-footer-back {
+  padding:52px;display:flex;align-items:center;justify-content:flex-end;
+}
+#pg-aneekaa .an-footer-back a {
+  font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#999;border:1px solid #e8e8e8;padding:12px 24px;
+  transition:border-color .2s,color .2s;text-decoration:none;
+}
+#pg-aneekaa .an-footer-back a:hover { border-color:var(--ink);color:var(--ink); }
+#pg-aneekaa .an-foot {
+  padding:20px 52px;border-top:1px solid #e8e8e8;
+  display:flex;justify-content:space-between;align-items:center;
+}
+#pg-aneekaa .an-foot p {
+  font-size:11px;color:#bbb;
+}
+#pg-aneekaa .an-foot a {
+  font-size:11px;color:#bbb;text-decoration:none;transition:color .2s;
+}
+#pg-aneekaa .an-foot a:hover { color:var(--ink); }
+
+/* fade-in animations for agency page */
+#pg-aneekaa .an-fade {
+  opacity:0;transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1);
+}
+#pg-aneekaa .an-fade.in { opacity:1;transform:none; }
+#pg-aneekaa .an-fade-img {
+  opacity:0;transition:opacity .9s ease;
+}
+#pg-aneekaa .an-fade-img.in { opacity:1; }
+
+/* responsive */
+@media(max-width:860px){
+  #pg-aneekaa .an-nav { padding:14px 20px; }
+  #pg-aneekaa .an-hero { padding:80px 20px 56px; }
+  #pg-aneekaa .an-hero-meta { flex-wrap:wrap;gap:24px; }
+  #pg-aneekaa .an-stats { grid-template-columns:1fr 1fr; }
+  #pg-aneekaa .an-stat { padding:28px 20px; }
+  #pg-aneekaa .an-intro,
+  #pg-aneekaa .an-how { grid-template-columns:1fr;gap:24px;padding:48px 20px; }
+  #pg-aneekaa .an-intro-label,
+  #pg-aneekaa .an-how-label { position:static; }
+  #pg-aneekaa .an-services { padding:48px 20px; }
+  #pg-aneekaa .an-service-grid { grid-template-columns:1fr 1fr; }
+  #pg-aneekaa .an-project-header { grid-template-columns:1fr; }
+  #pg-aneekaa .an-project-meta { padding:36px 20px;border-right:none;border-bottom:1px solid #e8e8e8; }
+  #pg-aneekaa .an-project-result { padding:36px 20px; }
+  #pg-aneekaa .an-img-grid.three { grid-template-columns:1fr 1fr; }
+  #pg-aneekaa .an-clients { padding:36px 20px; }
+  #pg-aneekaa .an-quote { padding:64px 20px; }
+  #pg-aneekaa .an-footer { grid-template-columns:1fr; }
+  #pg-aneekaa .an-footer-next { border-right:none;border-bottom:1px solid #e8e8e8; }
+  #pg-aneekaa .an-footer-next,
+  #pg-aneekaa .an-footer-back { padding:36px 20px; }
+  #pg-aneekaa .an-footer-back { justify-content:flex-start; }
+  #pg-aneekaa .an-foot { padding:16px 20px; }
+}
+</style>
+
+  <!-- HERO -->
+  <div class="an-hero an-fade">
+    <div class="an-hero-kicker">Concept &amp; Design Consultancy · Berlin / Spain · 2015 to 2024</div>
+    <div class="an-hero-title">Nine years.<br><em>No templates.</em><br>Ever.</div>
+    <p class="an-hero-sub">I co-founded Aneekaa and ran it for nearly a decade. Brand, web, photography, and video for clients who needed things done properly. Every project from scratch. Every project delivered.</p>
+    <div class="an-hero-meta">
+      <div class="an-meta-item">
+        <div class="an-meta-label">Role</div>
+        <div class="an-meta-value">Co-Founder &amp; Creative Director</div>
       </div>
-      <div class="ph-ttl">Aneekaa Studio</div>
-      <p class="ph-sub">How I co built a creative studio trusted by Adidas, Zalando, and Blinkist. Every project delivered on time, 60% repeat business, and nine years of learning what it takes to build from zero.</p>
-    </div>
-    <div class="mbar fade">
-      <div class="mi"><div class="mn">+60%</div><div class="ml">Repeat business rate</div></div>
-      <div class="mi"><div class="mn">+20%</div><div class="ml">Conversion lift</div></div>
-      <div class="mi"><div class="mn">100%</div><div class="ml">On-time delivery</div></div>
-      <div class="mi"><div class="mn">20+</div><div class="ml">Clients delivered</div></div>
-    </div>
-    <div class="ph-cover fade">
-      <img src="https://hi.manubecerra.com/wp-content/uploads/2025/10/Aneekaa-manuweb.png" alt="Aneekaa Studio">
+      <div class="an-meta-item">
+        <div class="an-meta-label">Location</div>
+        <div class="an-meta-value">Berlin · Madrid</div>
+      </div>
+      <div class="an-meta-item">
+        <div class="an-meta-label">Duration</div>
+        <div class="an-meta-value">2015 to 2024</div>
+      </div>
+      <div class="an-meta-item">
+        <div class="an-meta-label">Disciplines</div>
+        <div class="an-meta-value">Brand · Web · Photo · Video</div>
+      </div>
     </div>
   </div>
-  <div class="art">
-    <h2>The Context</h2>
-    <p>Aneekaa Studio was the agency I co founded in 2015 and ran for nearly a decade. We delivered brand strategy, digital design, and web development for clients across Spain and Germany. We worked with <strong>Adidas, Zalando, Blinkist, and Fotografiska</strong>, and built a reputation for being clear, reliable, and precise.</p>
-    <p>Running Aneekaa was not only creative work. It was full ownership. I set objectives, scoped work, estimated effort, coordinated a small core team plus freelancers, and managed client relationships from kickoff to sign off.</p>
-    <div class="aq"><p>"Building from zero taught me that strategy without execution is theory, and execution without strategy is noise. You need both at the same time."</p></div>
 
-    <h2>What I Did</h2>
-    <ul>
-      <li><strong>Full cycle ownership:</strong> From brief and scope through delivery and sign off. I owned the full lifecycle on every engagement</li>
-      <li><strong>Cross-functional coordination:</strong> Managed designers, developers, and videographers across Spain and Germany, aligning priorities and clearing blockers to maintain delivery schedules</li>
-      <li><strong>Client relationships:</strong> Clear communication and accurate estimates that led to 60% repeat business and steady referrals</li>
-      <li><strong>Rapid UX iteration:</strong> For Fruchtstück3000's site launch, rapid UX iterations drove a 35% traffic surge in the first month and a 20% lift in reservation conversions</li>
-    </ul>
-    <img class="cs-img" src="https://hi.manubecerra.com/wp-content/uploads/2025/10/Aneekaa-manuweb.png" alt="Aneekaa Studio">
-
-    <h2>Key Highlights</h2>
-    <ul>
-      <li><strong>Adidas, Zalando, Blinkist, Fotografiska:</strong> Brand and web projects scoped, coordinated, and shipped without missing deadlines</li>
-      <li><strong>Blinkist cultural onboarding video:</strong> Produced a cultural onboarding video that received 90% positive feedback from new hires and strengthened employer branding</li>
-      <li><strong>Fruchtstück3000 launch:</strong> UX-led redesign drove +35% traffic and +20% reservations in the first month</li>
-      <li><strong>100% on-time, on-budget delivery</strong> across 20+ client projects over 9 years</li>
-    </ul>
-
-    <h2>What It Taught Me</h2>
-    <p>Running a studio for nine years gave me something most PMs do not have: I have felt the full weight of delivery. I know what it means when a deadline slips, scope creeps, or a client loses confidence. That experience shapes how I work today. I treat product decisions with founder level seriousness because I have been one.</p>
-  </div>
-  <div class="case-nav">
-    <div class="cnl" onclick="show('halos')">
-      <div class="cnlbl">// back to first</div>
-      <div class="cnttl">HALOS Console →</div>
+  <!-- STATS -->
+  <div class="an-stats">
+    <div class="an-stat an-fade">
+      <div class="an-stat-n">9<span>yr</span></div>
+      <div class="an-stat-l">Running the studio</div>
     </div>
-    <a href="#" class="btn-case" onclick="show('home');jmp('work');return false">All Projects</a>
+    <div class="an-stat an-fade">
+      <div class="an-stat-n">20<span>+</span></div>
+      <div class="an-stat-l">Clients delivered</div>
+    </div>
+    <div class="an-stat an-fade">
+      <div class="an-stat-n">60<span>%</span></div>
+      <div class="an-stat-l">Repeat business rate</div>
+    </div>
+    <div class="an-stat an-fade">
+      <div class="an-stat-n">100<span>%</span></div>
+      <div class="an-stat-l">On-time, on-budget</div>
+    </div>
   </div>
-  <footer><p>// © 2026 Manuel Becerra · Berlin</p><div class="fl"><a href="https://www.linkedin.com/in/manubecerra" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></footer>
+
+  <!-- COVER -->
+  <div class="an-cover an-fade-img">
+    <img src="https://hi.manubecerra.com/wp-content/uploads/2025/10/Aneekaa-manuweb.png" alt="Aneekaa Studio" onclick="lbOpen(this)" data-caption="Aneekaa Studio · Portfolio overview">
+  </div>
+
+  <!-- INTRO -->
+  <div class="an-intro">
+    <div class="an-intro-label">About the studio</div>
+    <div class="an-intro-body an-fade">
+      <p>Aneekaa was built from <strong>nothing</strong>. No clients, no reputation, no safety net. Just a clear idea of what good creative work looks like and the discipline to deliver it consistently.</p>
+      <p>We worked with restaurants, startups, cultural venues, and international brands. The brief was always different. The standard was always the same.</p>
+      <blockquote>
+        <p>"Strategy without execution is theory. Execution without strategy is noise. Running Aneekaa taught me to hold both at the same time."</p>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="an-services an-fade">
+    <div class="an-services-header">
+      <div class="an-section-title">What we did</div>
+      <div class="an-section-count">04 disciplines</div>
+    </div>
+    <div class="an-service-grid">
+      <div class="an-service">
+        <span class="an-service-ico">📷</span>
+        <div class="an-service-name">Photography</div>
+        <ul class="an-service-list">
+          <li>Food &amp; beverage</li>
+          <li>Interior &amp; architecture</li>
+          <li>Product &amp; commercial</li>
+          <li>Fashion &amp; editorial</li>
+        </ul>
+      </div>
+      <div class="an-service">
+        <span class="an-service-ico">✏️</span>
+        <div class="an-service-name">Design</div>
+        <ul class="an-service-list">
+          <li>Brand identity</li>
+          <li>Web design</li>
+          <li>Editorial</li>
+          <li>Stationery &amp; print</li>
+        </ul>
+      </div>
+      <div class="an-service">
+        <span class="an-service-ico">🎬</span>
+        <div class="an-service-name">Video</div>
+        <ul class="an-service-list">
+          <li>Brand promo</li>
+          <li>Corporate</li>
+          <li>Motion graphics</li>
+          <li>Animation</li>
+        </ul>
+      </div>
+      <div class="an-service">
+        <span class="an-service-ico">🌐</span>
+        <div class="an-service-name">Web</div>
+        <ul class="an-service-list">
+          <li>Custom WordPress</li>
+          <li>E-commerce</li>
+          <li>Multilingual</li>
+          <li>Reservation systems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 01 — FRUEHSTUECK 3000 -->
+  <div class="an-project">
+    <div class="an-project-header">
+      <div class="an-project-meta an-fade">
+        <div>
+          <div class="an-project-num">Project 01 / 05</div>
+          <div class="an-project-type">Web Design · Photography · Berlin</div>
+          <div class="an-project-name">Fruehstueck<br>3000</div>
+          <p class="an-project-desc">Berlin's better breakfast. We built the full digital presence from scratch: custom WordPress, reservation integration, multilingual setup, and a complete food and interior photography shoot. <strong>Every image on the site is ours.</strong></p>
+          <a href="https://fruehstueck3000.com/en/" target="_blank" rel="noopener noreferrer" class="an-project-link">↗ fruehstueck3000.com</a>
+        </div>
+      </div>
+      <div class="an-project-result an-fade">
+        <div class="an-result-stat">
+          <div class="an-result-n">+35%</div>
+          <div class="an-result-l">Traffic in month one</div>
+        </div>
+        <div class="an-result-stat">
+          <div class="an-result-n">+20%</div>
+          <div class="an-result-l">Reservation conversions</div>
+        </div>
+        <div class="an-result-stat">
+          <div class="an-result-n">0€</div>
+          <div class="an-result-l">Paid spend. Pure UX.</div>
+        </div>
+      </div>
+    </div>
+    <div class="an-img-full an-fade-img" onclick="lbOpen(this)">
+      <img src="https://aneekaa.com/wp-content/uploads/MacBook-Pro-mockup-f3k.jpg" alt="Fruehstueck 3000 desktop" data-caption="Fruehstueck 3000 · Web design · Desktop">
+    </div>
+    <div class="an-img-grid two an-fade-img">
+      <img src="https://aneekaa.com/wp-content/uploads/mockup-f3k-iphoneXR-1.jpg" alt="Fruehstueck 3000 mobile" onclick="lbOpen(this)" data-caption="Fruehstueck 3000 · Mobile">
+      <img src="https://aneekaa.com/wp-content/uploads/iPad-Pro-Mockup-f3k.jpg" alt="Fruehstueck 3000 tablet" onclick="lbOpen(this)" data-caption="Fruehstueck 3000 · Tablet">
+    </div>
+    <div class="an-img-full an-fade-img" onclick="lbOpen(this)">
+      <img src="https://aneekaa.com/wp-content/uploads/fotos-home-f3k.jpg" alt="Fruehstueck 3000 photography" data-caption="Fruehstueck 3000 · Food photography">
+    </div>
+  </div>
+
+  <!-- PROJECT 02 — IL SAGRANTINO -->
+  <div class="an-project">
+    <div class="an-project-header">
+      <div class="an-project-meta an-fade">
+        <div>
+          <div class="an-project-num">Project 02 / 05</div>
+          <div class="an-project-type">Photography · Berlin</div>
+          <div class="an-project-name">Il<br>Sagrantino</div>
+          <p class="an-project-desc">Italian restaurant in Berlin. Full food and interior photography across multiple sessions. The brief: make the food look as good as it tastes, and make the space feel like somewhere worth going on a Tuesday night.</p>
+        </div>
+      </div>
+      <div class="an-project-result an-fade" style="justify-content:center">
+        <div style="font-size:13px;color:#999;font-weight:300;line-height:1.8;max-width:280px">
+          Shot on location. Images used across restaurant's marketing, social, and web presence. Delivered same week.
+        </div>
+      </div>
+    </div>
+    <div class="an-img-grid three an-fade-img">
+      <img src="https://aneekaa.com/wp-content/uploads/sagrantino-3.jpg" alt="Il Sagrantino food" onclick="lbOpen(this)" data-caption="Il Sagrantino · Food photography" style="aspect-ratio:3/2">
+      <img src="https://aneekaa.com/wp-content/uploads/sagrantino-9.jpg" alt="Il Sagrantino interior" onclick="lbOpen(this)" data-caption="Il Sagrantino · Interior" style="aspect-ratio:3/2">
+      <img src="https://aneekaa.com/wp-content/uploads/sagrantino-8.jpg" alt="Il Sagrantino detail" onclick="lbOpen(this)" data-caption="Il Sagrantino · Detail" style="aspect-ratio:3/2">
+    </div>
+    <div class="an-img-grid two an-fade-img">
+      <img src="https://aneekaa.com/wp-content/uploads/sagrantino-11.jpg" alt="Il Sagrantino atmosphere" onclick="lbOpen(this)" data-caption="Il Sagrantino · Atmosphere">
+      <img src="https://aneekaa.com/wp-content/uploads/sagrantino-13.jpg" alt="Il Sagrantino food close" onclick="lbOpen(this)" data-caption="Il Sagrantino · Close up">
+    </div>
+  </div>
+
+  <!-- PROJECT 03 — LUKI·U -->
+  <div class="an-project">
+    <div class="an-project-header">
+      <div class="an-project-meta an-fade">
+        <div>
+          <div class="an-project-num">Project 03 / 05</div>
+          <div class="an-project-type">Brand Identity · Bogotá</div>
+          <div class="an-project-name">Luki·u</div>
+          <p class="an-project-desc">A fun design studio in Bogotá needed a brand that felt like them: playful but considered. We built the full visual identity from scratch. Color system, typography, signage, stationery. The result was a brand immediately recognizable and hard to imitate.</p>
+        </div>
+      </div>
+      <div class="an-project-result an-fade" style="justify-content:center">
+        <div style="font-size:13px;color:#999;font-weight:300;line-height:1.8;max-width:280px">
+          Full identity system: naming context, color palette, typeface selection, signage system, and printed stationery.
+        </div>
+      </div>
+    </div>
+    <div class="an-img-full an-fade-img" onclick="lbOpen(this)">
+      <img src="https://aneekaa.com/wp-content/uploads/lukiu-señaletica-final.jpg" alt="Luki·u signage" data-caption="Luki·u · Brand signage system">
+    </div>
+    <div class="an-img-grid two an-fade-img">
+      <img src="https://aneekaa.com/wp-content/uploads/Mockup-cards-likiu.-cards-final.jpg" alt="Luki·u business cards" onclick="lbOpen(this)" data-caption="Luki·u · Stationery">
+      <img src="https://aneekaa.com/wp-content/uploads/Flag-Mockup.jpg" alt="Luki·u flag" onclick="lbOpen(this)" data-caption="Luki·u · Flag mockup">
+    </div>
+  </div>
+
+  <!-- PROJECT 04 — BLINKIST -->
+  <div class="an-project">
+    <div class="an-project-header">
+      <div class="an-project-meta an-fade">
+        <div>
+          <div class="an-project-num">Project 04 / 05</div>
+          <div class="an-project-type">Video · Corporate · Berlin</div>
+          <div class="an-project-name">Blinkist</div>
+          <p class="an-project-desc">Blinkist needed a cultural onboarding video for new hires. Not a company explainer. Something that showed who they actually were. We scripted, directed, and produced it in-house. It became part of their standard onboarding process.</p>
+        </div>
+      </div>
+      <div class="an-project-result an-fade">
+        <div class="an-result-stat">
+          <div class="an-result-n">90%</div>
+          <div class="an-result-l">Positive feedback from new hires</div>
+        </div>
+        <div class="an-result-stat">
+          <div class="an-result-n">1</div>
+          <div class="an-result-l">Video. Still in their onboarding today.</div>
+        </div>
+      </div>
+    </div>
+    <div class="an-img-full an-fade-img" style="padding-bottom:56.25%;position:relative;height:0;overflow:hidden">
+      <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:1px solid #e8e8e8;border-radius:8px" src="https://www.youtube.com/embed/VJudtmpu8Pw?si=Ydyx1OLLFstv9hJI" title="Blinkist Corporate Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- PROJECT 05 — YATORA -->
+  <div class="an-project">
+    <div class="an-project-header">
+      <div class="an-project-meta an-fade">
+        <div>
+          <div class="an-project-num">Project 05 / 05</div>
+          <div class="an-project-type">Web Design · Photography · Berlin</div>
+          <div class="an-project-name">Yatora</div>
+          <p class="an-project-desc">Yatora sells exotic handmade goods. They needed a web presence and product photography that matched the quality of what they make. We delivered both: clean custom WordPress and a full product shoot.</p>
+          <a href="https://yatora.com/" target="_blank" rel="noopener noreferrer" class="an-project-link">↗ yatora.com</a>
+        </div>
+      </div>
+      <div class="an-project-result an-fade" style="justify-content:center">
+        <div style="font-size:13px;color:#999;font-weight:300;line-height:1.8;max-width:280px">
+          Custom build. No templates. Photography and web delivered as one integrated brief.
+        </div>
+      </div>
+    </div>
+    <div class="an-img-full an-fade-img" onclick="lbOpen(this)">
+      <img src="https://aneekaa.com/wp-content/uploads/yatora-presentation.jpg" alt="Yatora presentation" data-caption="Yatora · Web and product photography">
+    </div>
+    <div class="an-img-grid two an-fade-img">
+      <img src="https://aneekaa.com/wp-content/uploads/yatora-desktop.jpg" alt="Yatora desktop" onclick="lbOpen(this)" data-caption="Yatora · Desktop">
+      <img src="https://aneekaa.com/wp-content/uploads/yatora-mobile-final.jpg" alt="Yatora mobile" onclick="lbOpen(this)" data-caption="Yatora · Mobile">
+    </div>
+  </div>
+
+  <!-- HOW I RAN THE STUDIO -->
+  <div class="an-how">
+    <div class="an-how-label">How it worked</div>
+    <div class="an-how-list">
+      <div class="an-how-item an-fade">
+        <div class="an-how-n">01</div>
+        <div>
+          <div class="an-how-title">Brief to sign-off ownership</div>
+          <p class="an-how-desc">I owned every engagement end to end. Discovery, scope, creative direction, production, delivery, and sign-off. No handoffs without full context. No dropped balls between stages.</p>
+        </div>
+      </div>
+      <div class="an-how-item an-fade">
+        <div class="an-how-n">02</div>
+        <div>
+          <div class="an-how-title">Distributed team, no delays</div>
+          <p class="an-how-desc">Managed designers, developers, photographers, and videographers across Spain and Germany. Tight deadlines, clear ownership per task, and a culture of just getting it done.</p>
+        </div>
+      </div>
+      <div class="an-how-item an-fade">
+        <div class="an-how-n">03</div>
+        <div>
+          <div class="an-how-title">Clients who came back</div>
+          <p class="an-how-desc">60% repeat business is not luck. It comes from accurate estimates, honest communication, and delivering what you said you would. Clients returned because they knew what to expect.</p>
+        </div>
+      </div>
+      <div class="an-how-item an-fade">
+        <div class="an-how-n">04</div>
+        <div>
+          <div class="an-how-title">No templates. Always from scratch.</div>
+          <p class="an-how-desc">That was the rule. Every brief approached fresh. It was slower and more expensive to run that way. It was also the only thing that kept the quality consistent across nine years.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENTS -->
+  <div class="an-clients an-fade">
+    <div class="an-clients-label">Clients &amp; collaborators</div>
+    <div class="an-clients-list">
+      <span class="an-client">Blinkist</span>
+      <span class="an-client">Fruehstueck 3000</span>
+      <span class="an-client">Il Sagrantino</span>
+      <span class="an-client">Chicha</span>
+      <span class="an-client">Yatora</span>
+      <span class="an-client">Luki·u</span>
+      <span class="an-client">Basement</span>
+      <span class="an-client">C&amp;S Club Divine</span>
+      <span class="an-client">Studio C</span>
+      <span class="an-client">Baldon</span>
+      <span class="an-client">Friends Space</span>
+    </div>
+  </div>
+
+  <!-- CLOSING QUOTE -->
+  <div class="an-quote">
+    <p>"Running a studio for nine years gave me something most people don't have: I've felt the <strong>full weight of delivery</strong>. I know what it means when a deadline slips, scope creeps, or a client loses confidence. That experience shapes everything I do now."</p>
+    <div class="an-quote-attr">Manuel Becerra · Co-Founder, Aneekaa Studio</div>
+  </div>
+
+  <!-- FOOTER NAV -->
+  <div class="an-footer">
+    <div class="an-footer-next" onclick="show('signal')">
+      <div class="an-footer-next-label">Next project</div>
+      <div class="an-footer-next-title">Signal: Feedback Routing →</div>
+    </div>
+    <div class="an-footer-back">
+      <a href="#" onclick="show('home');jmp('work');return false">All Projects</a>
+    </div>
+  </div>
+  <div class="an-foot">
+    <p>© 2026 Manuel Becerra · Berlin</p>
+    <a href="https://www.linkedin.com/in/manubecerra" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </div>
+
+<script>
+/* Aneekaa page scroll observer — runs whenever pg-aneekaa becomes active */
+(function(){
+  function initAneekaaFades(){
+    const page=document.getElementById('pg-aneekaa');
+    if(!page||!page.classList.contains('active'))return;
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+    },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+    page.querySelectorAll('.an-fade:not(.in),.an-fade-img:not(.in)').forEach(el=>obs.observe(el));
+    page.querySelectorAll('.an-fade,.an-fade-img').forEach(el=>{
+      if(el.getBoundingClientRect().top<window.innerHeight*.95)el.classList.add('in');
+    });
+  }
+  /* hook into the existing show() by observing class changes on pg-aneekaa */
+  const target=document.getElementById('pg-aneekaa');
+  if(target){
+    const mo=new MutationObserver(()=>{
+      if(target.classList.contains('active'))setTimeout(initAneekaaFades,100);
+    });
+    mo.observe(target,{attributes:true,attributeFilter:['class']});
+    if(target.classList.contains('active'))initAneekaaFades();
+  }
+})();
+</script>
+
 </div>
 
 
@@ -2063,11 +3604,53 @@ function jmp(id){
   setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})},130);
 }
 
+/* counter animation */
+function animCount(el){
+  const raw=el.textContent.trim();
+  const num=parseFloat(raw.replace(/[^0-9.]/g,''));
+  if(isNaN(num)||el.dataset.counted)return;
+  el.dataset.counted='1';
+  const prefix=raw.match(/^[^0-9]*/)[0];
+  const suffix=raw.match(/[^0-9]*$/)[0];
+  const dur=1000,steps=50,inc=num/steps;
+  let cur=0,t=0;
+  const tick=setInterval(()=>{
+    t++;cur=Math.min(cur+inc,num);
+    el.innerHTML=prefix+(Number.isInteger(num)?Math.round(cur):cur.toFixed(1))+suffix;
+    if(t>=steps){clearInterval(tick);el.innerHTML=raw;}
+  },dur/steps);
+}
+
 /* scroll fade */
 function initFades(){
-  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.06});
-  document.querySelectorAll('.fade:not(.in)').forEach(el=>obs.observe(el));
-  document.querySelectorAll('.fade').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight*.9)el.classList.add('in')});
+  const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      if(e.target.classList.contains('stats')){
+        e.target.querySelectorAll('.st .n').forEach(el=>animCount(el));
+      }
+    }
+  }),{threshold:.06});
+  document.querySelectorAll('.fade:not(.in),.fade-group:not(.in)').forEach(el=>obs.observe(el));
+  document.querySelectorAll('.fade,.fade-group').forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight*.9){
+      el.classList.add('in');
+      if(el.classList.contains('stats'))el.querySelectorAll('.st .n').forEach(animCount);
+    }
+  });
+
+  /* art body — observe each direct child individually */
+  const artObs=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('art-in'); artObs.unobserve(e.target); }
+  }),{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.art > *:not(.art-in), .brand-section:not(.art-in)').forEach((el,i)=>{
+    el.style.transitionDelay = (i*0.04).toFixed(2)+'s';
+    if(el.getBoundingClientRect().top < window.innerHeight*.95){
+      el.classList.add('art-in');
+    } else {
+      artObs.observe(el);
+    }
+  });
 }
 
 /* lightbox */
