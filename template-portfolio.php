@@ -3840,5 +3840,6 @@ if(caseStudyPages.has(initialCase)){
 
 initFades();
 </script>
+<script src='https://widget.superchat.de/snippet.js?applicationKey=WCOzVqDdxywB4QPLr7ag28MkpX' referrerpolicy='no-referrer-when-downgrade'></script>
 </body>
 </html>
