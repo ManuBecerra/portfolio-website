@@ -32,7 +32,7 @@ $ogCard = $ogCards[array_rand($ogCards)];
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hi.manubecerra.com">
 <meta property="og:title" content="Manuel Becerra | Product Designer · AI Evaluation · Berlin">
-<meta property="og:description" content="Product Designer who turns complex AI systems into usable interfaces. Designed Flow's trust UX at Lengoo, cutting translation time 50%. Berlin & remote.">
+<meta property="og:description" content="Product Designer who turns complex AI systems into usable interfaces. Designed Flow's trust UX at Lengoo. Cut translation time 50%. Berlin & remote.">
 <meta property="og:image" content="<?php echo htmlspecialchars($ogCard['image'], ENT_QUOTES, 'UTF-8'); ?>">
 <meta property="og:image:alt" content="<?php echo htmlspecialchars($ogCard['alt'], ENT_QUOTES, 'UTF-8'); ?>">
 <meta property="og:locale" content="en_US">
@@ -41,11 +41,11 @@ $ogCard = $ogCards[array_rand($ogCards)];
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://hi.manubecerra.com">
 <meta name="twitter:title" content="Manuel Becerra | Product Designer · AI Evaluation · Berlin">
-<meta name="twitter:description" content="Product Designer who turns complex AI systems into usable interfaces. Designed Flow's trust UX at Lengoo, cutting translation time 50%. Berlin & remote.">
+<meta name="twitter:description" content="Product Designer who turns complex AI systems into usable interfaces. Designed Flow's trust UX at Lengoo. Cut translation time 50%. Berlin & remote.">
 <meta name="twitter:image" content="<?php echo htmlspecialchars($ogCard['image'], ENT_QUOTES, 'UTF-8'); ?>">
 
 <!-- Additional Meta Tags -->
-<meta name="description" content="Product Designer who turns complex AI systems into usable interfaces. Designed Flow's trust UX at Lengoo, cutting translation time 50%. Berlin & remote.">
+<meta name="description" content="Product Designer who turns complex AI systems into usable interfaces. Designed Flow's trust UX at Lengoo. Cut translation time 50%. Berlin & remote.">
 <meta name="author" content="Manuel Becerra">
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="google9e1b1b5f15b5328b.html">
@@ -1912,7 +1912,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="lbl">About</div>
         <div class="stitle">From brand to AI systems.</div>
         <p>I'm Manuel. My design background started in advertising and photography, years before I ever touched a product. I built real creative and brand work first, then founded my own studio.</p>
-        <p>At <strong>Lengoo</strong> that became product design combined with ownership. I designed Flow's trust and interaction systems with our design lead, then took HALOS Console on solo. From there I moved toward harder technical ground. Conversational AI, SaaS at scale, at <strong>Cognigy</strong>. I stayed close to APIs, logs, and model behavior. Most designers never touch that layer.</p>
+        <p>At <strong>Lengoo</strong> that became product design combined with ownership. I designed Flow's trust and interaction systems, then took HALOS Console on solo. From there I moved toward harder technical ground. Conversational AI, SaaS at scale, at <strong>Cognigy</strong>. I stayed close to APIs, logs, and model behavior. Most designers never touch that layer.</p>
         <p>I'm looking for <strong>Product Designer roles</strong> where that whole arc matters. Brand instinct. Product ownership. Real technical fluency. Companies building AI-driven or technically complex products. Berlin, hybrid, or remote.</p>
       </div>
       <div class="pillars">
@@ -2178,7 +2178,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="sec fade" id="credentials">
     <div class="lbl">Credentials</div>
     <p style="font-size:15px;color:var(--muted);line-height:1.82;max-width:760px;font-weight:300;margin-top:10px">
-      <strong>Product Manager &mdash; AI Program</strong>, IU Akademie Berlin. <strong>PSPO I</strong> and <strong>PSM I</strong> from Scrum.org. <strong>Spezialist:in f&uuml;r agiles Projekt- und Prozessmanagement</strong> from IFM. <strong>MA in Photography</strong>, Espai d'art Fotogr&agrave;fic de Val&egrave;ncia. <strong>BA in Advertising</strong>, Universidad Jorge Tadeo Lozano.
+      <strong>Product Manager: AI Program</strong>, IU Akademie Berlin. <strong>PSPO I</strong> and <strong>PSM I</strong> from Scrum.org. <strong>Spezialist:in f&uuml;r agiles Projekt- und Prozessmanagement</strong> from IFM. <strong>MA in Photography</strong>, Espai d'art Fotogr&agrave;fic de Val&egrave;ncia. <strong>BA in Advertising</strong>, Universidad Jorge Tadeo Lozano.
     </p>
   </section>
 
@@ -2189,17 +2189,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="now-grid">
       <div class="now-col">
         <div class="now-status">Build in progress</div>
-        <div class="now-title">K&#x14d;r &mdash; AI eval framework</div>
+        <div class="now-title">K&#x14d;r: AI eval framework</div>
         <p class="now-desc">A sport-recovery product concept. I built a working eval framework: 5 scenarios, 3 models, automated Claude-as-judge scoring, human-in-loop trigger at 22/30. Tiered model routing based on results. Live eval runner on n8n.</p>
       </div>
       <div class="now-col">
         <div class="now-status">Running since Oct 2025</div>
-        <div class="now-title">Agent orchestration &mdash; n8n stack</div>
+        <div class="now-title">Agent orchestration: n8n stack</div>
         <p class="now-desc">Self-hosted n8n with three live workflows: daily job discovery agent, cover letter generator, and the K&#x14d;r eval runner. All calling Claude or OpenAI APIs in production.</p>
       </div>
       <div class="now-col">
         <div class="now-status">In production at Cognigy</div>
-        <div class="now-title">Signal &mdash; feedback intelligence</div>
+        <div class="now-title">Signal: feedback intelligence</div>
         <p class="now-desc">The system I built at Cognigy that cut misrouted feedback by 70% in two sprints. Claude API classifier, taxonomy of 4 categories and 3 severities, Slack and Jira routing with confidence scores.</p>
         <a href="#" class="now-cta" onclick="show('signal');return false">Read the case study &rarr;</a>
       </div>
