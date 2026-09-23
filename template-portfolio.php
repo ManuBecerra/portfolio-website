@@ -109,7 +109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   [data-theme="light"] {
     --bg:#fafafa; --bg2:#f2f2f2; --bg3:#e8e8e8;
     --card:#fff; --bdr:#e0e0e0; --subtle:#ccc;
-    --ink:#0a0a0a; --muted:#888;
+    --ink:#0a0a0a; --muted:#666;
     --nav-bg:rgba(250,250,250,.92); --sh:rgba(0,0,0,.08);
   }
 
@@ -965,7 +965,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 [data-theme="light"] {
   --bg:#fafafa; --bg2:#f2f2f2; --bg3:#e8e8e8;
   --card:#fff; --bdr:#e0e0e0; --subtle:#ccc;
-  --ink:#0a0a0a; --muted:#888;
+  --ink:#0a0a0a; --muted:#666;
   --nav-bg:rgba(250,250,250,.92); --sh:rgba(0,0,0,.08);
 }
 
@@ -1071,7 +1071,10 @@ nav.open .nav-toggle span:last-child{transform:translateY(-3px) rotate(-45deg)}
 
 .h1{font-size:clamp(42px,5.4vw,80px);font-weight:800;line-height:1.02;letter-spacing:-3px;margin-bottom:22px;color:var(--ink)}
 .h1 .g{color:var(--al)}
-.h1 .ghost{-webkit-text-stroke:1.5px var(--subtle);color:transparent}
+.h1 .ghost{-webkit-text-stroke:1.5px var(--subtle);color:transparent;display:inline-block;min-width:12ch;text-align:left}
+.h1 .ghost::after{content:'';display:inline-block;width:2px;height:0.85em;margin-left:2px;background:var(--subtle);vertical-align:-0.1em;animation:blink-cursor 1s step-end infinite}
+@keyframes blink-cursor{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media(max-width:480px){.h1 .ghost{min-width:8ch}}
 .h1 .dm{color:var(--muted)}
 
 .hero-sub{font-size:16px;color:var(--muted);line-height:1.82;max-width:440px;margin-bottom:36px;font-weight:300}
@@ -1157,9 +1160,10 @@ nav.open .nav-toggle span:last-child{transform:translateY(-3px) rotate(-45deg)}
   overflow:hidden;
   cursor:pointer;
   height:100%;
-  transition:border-color .3s,transform .4s cubic-bezier(.22,1,.36,1);
+  transition:border-color .3s,transform .4s cubic-bezier(.22,1,.36,1),opacity .6s ease;
 }
 .pc-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -12px rgba(0,0,0,.35)}
+.pc-card.pc-pre{opacity:0;transform:translateY(24px)}
 
 /* Image / visual area */
 .pc-media{
@@ -1724,13 +1728,16 @@ footer p{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted
 .now-cta {
   font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700;
   letter-spacing:.1em; text-transform:uppercase; color:var(--al);
-  transition:opacity .2s;
+  transition:opacity .2s; display:inline-block; margin-top:16px;
 }
 .now-cta:hover { opacity:.75; }
 
 @media (max-width:860px) {
   .ways-grid, .now-grid { grid-template-columns:1fr; }
   .trust-strip { gap:10px 12px; }
+  #where > div[style*="grid-template-columns"],
+  #credentials > div[style*="grid-template-columns"],
+  #testimonials > div[style*="grid-template-columns"] { grid-template-columns:1fr !important; }
 }
 
 /* ─── SIGNAL STYLES ─── */
@@ -1859,7 +1866,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="tag"><span class="blink"></span><span id="heroTypeTarget" style="font-family:'JetBrains Mono',monospace"></span></div>
       <div class="h1">
         <span>I build </span><span class="g">AI products</span><br>
-        where the <span class="ghost">chaos</span> is real.
+        where the <span class="ghost" id="ghostWord">chaos</span> is real.
       </div>
       <p class="hero-sub">
         Nine years across brand and product design. Now going deeper technical at Cognigy, APIs, logs, model behavior. Not just the screen.
@@ -1887,12 +1894,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="chip c1"><div class="cn">9yr</div><div class="cl">Design + AI</div></div>
         <div class="chip c2"><div class="cn">3</div><div class="cl">AI agents live</div></div>
-        <div class="chip c3"><div class="cn">PSPO</div><div class="cl">+ PSM I</div></div>
+        <div class="chip c3"><div class="cn">50%</div><div class="cl">Faster translation</div></div>
       </div>
     </div>
   </section>
 
-  
+  <div class="ticker" style="padding:16px 0">
+    <div class="tk" id="tk" style="animation-duration:40s">
+      <span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Product Design<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Interaction Design<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">AI Evaluation<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Design Systems<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Usability Testing<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Product Ownership<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Brand Instinct<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">AI Trust<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Technical Depth<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Berlin<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span>
+      <span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Product Design<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Interaction Design<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">AI Evaluation<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Design Systems<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Usability Testing<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Product Ownership<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Brand Instinct<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">AI Trust<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Technical Depth<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span><span class="tki" style="font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)">Berlin<span class="s" style="color:var(--al);opacity:.7">&middot;</span></span>
+    </div>
+  </div>
 
   <div class="stats fade">
     <div class="st"><div class="n">9<span class="a">+</span></div><div class="l">Years in design</div></div>
@@ -2128,29 +2140,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- WHERE I'VE WORKED -->
   <section class="sec fade" id="where" style="padding-top:42px;padding-bottom:42px">
     <div class="lbl">Where I've worked</div>
-    <div class="trust-strip">
-      <span class="trust-name trust-primary">Cognigy</span>
-      <span class="trust-sep">&middot;</span>
-      <span class="trust-name trust-primary">Lengoo</span>
-      <span class="trust-sep">&middot;</span>
-      <span class="trust-name trust-primary">Aneekaa Studio</span>
-      <span class="trust-sep">&middot;</span>
-      <span class="trust-name">Adidas</span>
-      <span class="trust-sep">&middot;</span>
-      <span class="trust-name">Zalando</span>
-      <span class="trust-sep">&middot;</span>
-      <span class="trust-name">Blinkist</span>
-      <span class="trust-sep">&middot;</span>
-      <span class="trust-name">Fotografiska</span>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:18px">
+      <div>
+        <div style="font-weight:700;font-size:15px">Cognigy</div>
+        <div style="font-size:12px;color:var(--al);margin:4px 0">Product Support Engineer</div>
+        <div style="font-size:13px;color:var(--muted)">Debugs conversational AI in production, hands on with model behavior and failure modes</div>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px">Lengoo</div>
+        <div style="font-size:12px;color:var(--al);margin:4px 0">Product Designer &amp; Product Owner</div>
+        <div style="font-size:13px;color:var(--muted)">Designed Flow's trust and confidence scoring, cut translation time 50 percent</div>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px">Aneekaa Studio</div>
+        <div style="font-size:12px;color:var(--al);margin:4px 0">Co-Founder</div>
+        <div style="font-size:13px;color:var(--muted)">Brand and product design for Adidas, Zalando, Blinkist, and Fotografiska</div>
+      </div>
+    </div>
+    <div style="margin-top:20px;font-size:13px;color:var(--muted)">
+      Client work with <span class="trust-name">Adidas</span>, <span class="trust-name">Zalando</span>, <span class="trust-name">Blinkist</span>, and <span class="trust-name">Fotografiska</span>
     </div>
   </section>
 
   <!-- CREDENTIALS -->
   <section class="sec fade" id="credentials">
     <div class="lbl">Credentials</div>
-    <p style="font-size:15px;color:var(--muted);line-height:1.82;max-width:760px;font-weight:300;margin-top:10px">
-      <strong>Product Manager: AI Program</strong>, IU Akademie Berlin. <strong>PSPO I</strong> and <strong>PSM I</strong> from Scrum.org. <strong>Spezialist:in f&uuml;r agiles Projekt- und Prozessmanagement</strong> from IFM. <strong>MA in Photography</strong>, Espai d'art Fotogr&agrave;fic de Val&egrave;ncia. <strong>BA in Advertising</strong>, Universidad Jorge Tadeo Lozano.
-    </p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:18px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--al);text-transform:uppercase;margin-bottom:10px">Education</div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.9;font-weight:300">
+          <strong style="color:var(--ink)">MA in Photography</strong>, Espai d'art Fotogr&agrave;fic de Val&egrave;ncia<br>
+          <strong style="color:var(--ink)">BA in Advertising</strong>, Universidad Jorge Tadeo Lozano<br>
+          <strong style="color:var(--ink)">Product Manager: AI Program</strong>, IU Akademie Berlin
+        </p>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--al);text-transform:uppercase;margin-bottom:10px">Certifications</div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.9;font-weight:300">
+          <strong style="color:var(--ink)">Spezialist:in f&uuml;r agiles Projekt- und Prozessmanagement</strong>, IFM<br>
+          <strong style="color:var(--ink)">PSPO I</strong>, Scrum.org<br>
+          <strong style="color:var(--ink)">PSM I</strong>, Scrum.org
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- CURRENTLY BUILDING -->
@@ -2161,17 +2193,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="now-col">
         <div class="now-status">Build in progress</div>
         <div class="now-title">K&#x14d;r: AI eval framework</div>
-        <p class="now-desc">A sport-recovery product concept. I built a working eval framework: 5 scenarios, 3 models, automated Claude-as-judge scoring, human-in-loop trigger at 22/30. Tiered model routing based on results. Live eval runner on n8n.</p>
+        <p class="now-desc">Evals are how AI products earn their place, proven with 5 scenarios and 3 models on a sport-recovery concept.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">5 scenarios</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">3 models</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Claude-as-judge scoring</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Live on n8n</span>
+        </div>
       </div>
       <div class="now-col">
-        <div class="now-status">Running since Oct 2025</div>
-        <div class="now-title">Agent orchestration: n8n stack</div>
-        <p class="now-desc">Self-hosted n8n with three live workflows: daily job discovery agent, cover letter generator, and the K&#x14d;r eval runner. All calling Claude or OpenAI APIs in production.</p>
+        <div class="now-status">Running since Mar 2026</div>
+        <div class="now-title">Joblyst: job discovery, interview drills</div>
+        <p class="now-desc">A self-hosted automation stack built to run my own six-month search, now adding interview drills and becoming a product for others.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Job discovery agent</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Cover letter generator</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Interview drills</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Job-fit scoring</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Claude &amp; OpenAI APIs</span>
+        </div>
       </div>
       <div class="now-col">
         <div class="now-status">In production at Cognigy</div>
         <div class="now-title">Signal: feedback intelligence</div>
-        <p class="now-desc">The system I built at Cognigy that cut misrouted feedback by 70% in two sprints. Claude API classifier, taxonomy of 4 categories and 3 severities, Slack and Jira routing with confidence scores.</p>
+        <p class="now-desc">A feedback classifier that cut misrouted tickets by 70% in two sprints, scoring across 4 categories and 3 severities.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">4 categories</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">3 severities</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Slack &amp; Jira routing</span>
+          <span style="font-size:11px;padding:4px 10px;border:1px solid var(--bdr);border-radius:999px;color:var(--muted)">Confidence scores</span>
+        </div>
         <a href="#" class="now-cta" onclick="show('signal');return false">Read the case study &rarr;</a>
       </div>
     </div>
@@ -2183,23 +2234,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px">
       <div class="pil">
         <p style="font-style:italic">"Manu brings a rare blend of creative depth and technical versatility, strong audiovisual production skills, a sharp understanding of product and UX/UI strategy, and an instinct for building solutions that truly work. Whenever he's involved, the entire environment becomes more focused and more capable. I recommend him wholeheartedly."</p>
-        <h4 style="margin-top:16px;font-size:14px">Yousef Hammoudah</h4>
-        <div style="font-size:12px;color:var(--muted)">Global VP Brand Development &amp; Community, Fotografiska International, client relationship</div>
+        <h4 style="margin-top:16px;font-size:14px">Yousef</h4>
+        <div style="font-size:12px;color:var(--muted)">Global VP Brand Development &amp; Community, Fotografiska International</div>
       </div>
       <div class="pil">
         <p style="font-style:italic">"Working with Manuel was truly a blast. His project management skills earned a lot of trust in project development and asset management, and his creativity brought real innovation into our final solutions."</p>
-        <h4 style="margin-top:16px;font-size:14px">Maria Camila Becerra Rodriguez</h4>
-        <div style="font-size:12px;color:var(--muted)">Managed Manuel directly</div>
+        <h4 style="margin-top:16px;font-size:14px">Camila</h4>
+        <div style="font-size:12px;color:var(--muted)">Product Design Team Lead, Aleph Alpha</div>
       </div>
       <div class="pil">
         <p style="font-style:italic">"Manuel approached every challenge with determination and a proactive mindset. His greatest strength was taking initiative, ensuring technical issues were resolved efficiently. He was never afraid to seek input from colleagues, making him a strong problem solver and a great team player."</p>
-        <h4 style="margin-top:16px;font-size:14px">Ian Laffey</h4>
-        <div style="font-size:12px;color:var(--muted)">Technical Support Lead, Cognigy, same team</div>
+        <h4 style="margin-top:16px;font-size:14px">Ian</h4>
+        <div style="font-size:12px;color:var(--muted)">Technical Support Lead, Cognigy</div>
       </div>
       <div class="pil">
         <p style="font-style:italic">"Manu is an outstanding professional with a remarkable blend of technical expertise and interpersonal skills. His ability to learn quickly and adapt, combined with strong analytical skills, lets him resolve issues efficiently while keeping customers satisfied. He communicates complex technical concepts clearly to both colleagues and clients."</p>
-        <h4 style="margin-top:16px;font-size:14px">Nico Alvarez</h4>
-        <div style="font-size:12px;color:var(--muted)">Technical Support Team Lead, same team</div>
+        <h4 style="margin-top:16px;font-size:14px">Nico</h4>
+        <div style="font-size:12px;color:var(--muted)">Technical Support Team Lead, Cognigy</div>
       </div>
     </div>
   </section>
@@ -3752,6 +3803,18 @@ function animCount(el){
 
 /* scroll fade */
 function initFades(){
+  document.querySelectorAll('.pg > .pc-card').forEach(el=>el.classList.add('pc-pre'));
+  const pgObs=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){
+      const cards=e.target.querySelectorAll('.pc-card.pc-pre');
+      cards.forEach((el,i)=>{
+        el.style.transitionDelay=(i*0.08).toFixed(2)+'s';
+        setTimeout(()=>el.classList.remove('pc-pre'),10);
+      });
+      pgObs.unobserve(e.target);
+    }
+  }),{threshold:.1});
+  document.querySelectorAll('.pg').forEach(el=>pgObs.observe(el));
   const obs=new IntersectionObserver(entries=>entries.forEach(e=>{
     if(e.isIntersecting){
       e.target.classList.add('in');
@@ -3881,6 +3944,44 @@ initFades();
     }
   }
   type();
+})();
+</script>
+<script>
+(function(){
+  var el = document.getElementById('ghostWord');
+  if (!el) return;
+  var words = ['chaos', 'ambiguity', 'uncertainty', 'friction'];
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+  var i = 0;
+  function cycle(){
+    var current = words[i];
+    var j = current.length;
+    (function erase(){
+      if (j > 0) {
+        j--;
+        el.textContent = current.slice(0, j);
+        setTimeout(erase, 28);
+      } else {
+        i = (i + 1) % words.length;
+        typeNext();
+      }
+    })();
+  }
+  function typeNext(){
+    var next = words[i];
+    var k = 0;
+    (function type(){
+      if (k <= next.length) {
+        el.textContent = next.slice(0, k);
+        k++;
+        setTimeout(type, 55);
+      } else {
+        setTimeout(cycle, 2200);
+      }
+    })();
+  }
+  setTimeout(cycle, 2200);
 })();
 </script>
 </body>
