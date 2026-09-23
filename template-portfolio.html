@@ -1139,7 +1139,7 @@ nav.open .nav-toggle span:last-child{transform:translateY(-3px) rotate(-45deg)}
   height:100%;
   transition:border-color .3s,transform .4s cubic-bezier(.22,1,.36,1);
 }
-.pc-card:hover{transform:translateY(-3px)}
+.pc-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -12px rgba(0,0,0,.35)}
 
 /* Image / visual area */
 .pc-media{
@@ -1836,13 +1836,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-grid"></div>
 
     <div class="hero-left">
-      <div class="tag"><span class="blink"></span>Product Designer &middot; AI Evaluation &middot; Berlin</div>
+      <div class="tag"><span class="blink"></span><span id="heroTypeTarget" style="font-family:'JetBrains Mono',monospace"></span></div>
       <div class="h1">
         <span>I build </span><span class="g">AI products</span><br>
         where the <span class="ghost">chaos</span> is real.
       </div>
       <p class="hero-sub">
-        My design background started in advertising and photography, long before product. I spent years on creative and brand work, then founded my own studio, before moving into product design and ownership at Lengoo. Now I'm going further technical. Conversational AI at Cognigy. APIs, logs, model behavior. Not just the screen.
+        Nine years across brand and product design. Now going deeper technical at Cognigy, APIs, logs, model behavior. Not just the screen.
       </p>
       <div class="btns">
         <a href="#" class="btn-p" onclick="jmp('work');return false">View case studies</a>
@@ -1872,12 +1872,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <div class="ticker">
-    <div class="tk" id="tk">
-      <span class="tki">Product Design<span class="s">·</span></span><span class="tki">Interaction Design<span class="s">·</span></span><span class="tki">UX Strategy<span class="s">·</span></span><span class="tki">User Research<span class="s">·</span></span><span class="tki">AI Evaluation<span class="s">·</span></span><span class="tki">Usability Testing<span class="s">·</span></span><span class="tki">Cross-Functional Collaboration<span class="s">·</span></span><span class="tki">AI Product<span class="s">·</span></span><span class="tki">Prototyping<span class="s">·</span></span><span class="tki">A/B Testing<span class="s">·</span></span>
-      <span class="tki">Product Design<span class="s">·</span></span><span class="tki">Interaction Design<span class="s">·</span></span><span class="tki">UX Strategy<span class="s">·</span></span><span class="tki">User Research<span class="s">·</span></span><span class="tki">AI Evaluation<span class="s">·</span></span><span class="tki">Usability Testing<span class="s">·</span></span><span class="tki">Cross-Functional Collaboration<span class="s">·</span></span><span class="tki">AI Product<span class="s">·</span></span><span class="tki">Prototyping<span class="s">·</span></span><span class="tki">A/B Testing<span class="s">·</span></span>
-    </div>
-  </div>
+  
 
   <div class="stats fade">
     <div class="st"><div class="n">9<span class="a">+</span></div><div class="l">Years in design</div></div>
@@ -1891,8 +1886,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="abt">
         <div class="lbl">About</div>
         <div class="stitle">From brand to AI systems.</div>
-        <p>I'm Manuel. My design background started in advertising and photography, years before I ever touched a product. I built real creative and brand work first, then founded my own studio.</p>
-        <p>At <strong>Lengoo</strong> that became product design combined with ownership. I designed Flow's trust and interaction systems, then took HALOS Console on solo. From there I moved toward harder technical ground. Conversational AI, SaaS at scale, at <strong>Cognigy</strong>. I stayed close to APIs, logs, and model behavior. Most designers never touch that layer.</p>
+        <p>I'm Manuel. My design background started in advertising and photography, before I ever touched a product.</p>
+        <p>At <strong>Lengoo</strong> that became product design combined with ownership, Flow's trust systems, then HALOS Console solo. At <strong>Cognigy</strong> I went further technical, APIs, logs, model behavior.</p>
         <p>I'm looking for <strong>Product Designer roles</strong> where that whole arc matters. Brand instinct. Product ownership. Real technical fluency. Companies building AI-driven or technically complex products. Berlin, hybrid, or remote.</p>
       </div>
       <div class="pillars">
@@ -2182,6 +2177,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="now-title">Signal: feedback intelligence</div>
         <p class="now-desc">The system I built at Cognigy that cut misrouted feedback by 70% in two sprints. Claude API classifier, taxonomy of 4 categories and 3 severities, Slack and Jira routing with confidence scores.</p>
         <a href="#" class="now-cta" onclick="show('signal');return false">Read the case study &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec fade" id="testimonials">
+    <div class="lbl">What people say</div>
+    <div class="stitle">People I've worked with.</div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px">
+      <div class="pil">
+        <p style="font-style:italic">"Manu brings a rare blend of creative depth and technical versatility, strong audiovisual production skills, a sharp understanding of product and UX/UI strategy, and an instinct for building solutions that truly work. Whenever he's involved, the entire environment becomes more focused and more capable. I recommend him wholeheartedly."</p>
+        <h4 style="margin-top:16px;font-size:14px">Yousef Hammoudah</h4>
+        <div style="font-size:12px;color:var(--muted)">Global VP Brand Development &amp; Community, Fotografiska International, client relationship</div>
+      </div>
+      <div class="pil">
+        <p style="font-style:italic">"Working with Manuel was truly a blast. His project management skills earned a lot of trust in project development and asset management, and his creativity brought real innovation into our final solutions."</p>
+        <h4 style="margin-top:16px;font-size:14px">Maria Camila Becerra Rodriguez</h4>
+        <div style="font-size:12px;color:var(--muted)">Managed Manuel directly</div>
+      </div>
+      <div class="pil">
+        <p style="font-style:italic">"Manuel approached every challenge with determination and a proactive mindset. His greatest strength was taking initiative, ensuring technical issues were resolved efficiently. He was never afraid to seek input from colleagues, making him a strong problem solver and a great team player."</p>
+        <h4 style="margin-top:16px;font-size:14px">Ian Laffey</h4>
+        <div style="font-size:12px;color:var(--muted)">Technical Support Lead, Cognigy, same team</div>
+      </div>
+      <div class="pil">
+        <p style="font-style:italic">"Manu is an outstanding professional with a remarkable blend of technical expertise and interpersonal skills. His ability to learn quickly and adapt, combined with strong analytical skills, lets him resolve issues efficiently while keeping customers satisfied. He communicates complex technical concepts clearly to both colleagues and clients."</p>
+        <h4 style="margin-top:16px;font-size:14px">Nico Alvarez</h4>
+        <div style="font-size:12px;color:var(--muted)">Technical Support Team Lead, same team</div>
       </div>
     </div>
   </section>
@@ -3820,5 +3842,26 @@ if(caseStudyPages.has(initialCase)){
 initFades();
 </script>
 <script src='https://widget.superchat.de/snippet.js?applicationKey=WCOzVqDdxywB4QPLr7ag28MkpX' referrerpolicy='no-referrer-when-downgrade'></script>
+<script>
+(function(){
+  var target = document.getElementById('heroTypeTarget');
+  if (!target) return;
+  var text = 'Product Designer \u00B7 AI Evaluation \u00B7 Berlin';
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) {
+    target.textContent = text;
+    return;
+  }
+  var i = 0;
+  function type(){
+    if (i <= text.length) {
+      target.textContent = text.slice(0, i);
+      i++;
+      setTimeout(type, 28);
+    }
+  }
+  type();
+})();
+</script>
 </body>
 </html>
